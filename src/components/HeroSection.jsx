@@ -25,7 +25,7 @@ const HeroSection = () => {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,20 +42,20 @@ const HeroSection = () => {
                 elevada.
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-lg leading-relaxed font-light">
               La plataforma inteligente que centraliza tu historial médico y potencia tu bienestar con tecnología de vanguardia.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <Button 
+              <Button
                 onClick={() => handleDownload('iOS')}
                 className="h-14 px-8 rounded-full bg-gray-900 hover:bg-black text-white text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg shadow-gray-200"
               >
                 <Apple className="mr-2 w-5 h-5" />
                 App Store
               </Button>
-              <Button 
+              <Button
                 onClick={() => handleDownload('Android')}
                 variant="outline"
                 className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-900 text-gray-900 text-lg font-medium bg-transparent hover:bg-transparent transition-all"
@@ -66,29 +66,36 @@ const HeroSection = () => {
 
             <div className="mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium">
               <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                    <img alt={`User ${i}`} className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1694157263770-1a844cb0f6e0" />
-                  </div>
-                ))}
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                  <img alt="User 1" className="w-full h-full object-cover" src="/assets/users/user1.jpg" />
+                </div>
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                  <img alt="User 2" className="w-full h-full object-cover" src="/assets/users/user2.jpg" />
+                </div>
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                  <img alt="User 3" className="w-full h-full object-cover" src="/assets/users/user3.jpg" />
+                </div>
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                  <img alt="User 4" className="w-full h-full object-cover" src="/assets/users/user4.jpg" />
+                </div>
               </div>
               <p>Con la confianza de +10,000 usuarios</p>
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             style={{ y: y1 }}
             className="relative hidden lg:block"
           >
             <div className="relative z-10 transform perspective-1000 rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out">
-              <img 
-                src="https://horizons-cdn.hostinger.com/a203137b-d9ed-4bad-a713-4486f4b6f75d/8a1ebf614dfd480e9b33ffbf981e2a39.png" 
-                alt="App Interface Dashboard" 
+              <img
+                src="/assets/hero-image.png"
+                alt="App Interface Dashboard"
                 className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-gray-900/5 bg-gray-900"
               />
-              
+
               {/* Floating Cards */}
-              <motion.div 
+              <motion.div
                 style={{ y: y2 }}
                 className="absolute top-20 -right-12 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-20"
               >
@@ -102,7 +109,7 @@ const HeroSection = () => {
                 <p className="text-gray-400 text-xs">Mañana, 09:00 AM</p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="absolute bottom-32 -left-12 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 z-20 flex items-center gap-4"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}

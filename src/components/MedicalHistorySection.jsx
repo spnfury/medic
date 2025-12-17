@@ -16,14 +16,14 @@ const MedicalHistorySection = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#FF8C42]/20 to-[#FF6B35]/20 blur-3xl rounded-full transform scale-90" />
-              <img 
-                src="https://horizons-cdn.hostinger.com/a203137b-d9ed-4bad-a713-4486f4b6f75d/a8caace0525e7a6b73dad526c273242e.png" 
-                alt="Medical Dashboard UI" 
+              <img
+                src="/assets/medical-history.png"
+                alt="Medical Dashboard UI"
                 className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white"
               />
-              
+
               {/* Floating Element */}
-              <motion.div 
+              <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-10 -right-10 z-20 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs hidden md:block"

@@ -8,7 +8,7 @@ import selectionModePlugin from './plugins/selection-mode/vite-plugin-selection-
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-const configHorizonsViteErrorHandler = `
+const configViteErrorHandler = `
 const observer = new MutationObserver((mutations) => {
 	for (const mutation of mutations) {
 		for (const addedNode of mutation.addedNodes) {
@@ -48,14 +48,14 @@ function handleViteOverlay(node) {
 		const error = messageText + (fileText ? ' File:' + fileText : '');
 
 		window.parent.postMessage({
-			type: 'horizons-vite-error',
+			type: 'app-vite-error',
 			error,
 		}, '*');
 	}
 }
 `;
 
-const configHorizonsRuntimeErrorHandler = `
+const configRuntimeErrorHandler = `
 window.onerror = (message, source, lineno, colno, errorObj) => {
 	const errorDetails = errorObj ? JSON.stringify({
 		name: errorObj.name,
@@ -67,14 +67,14 @@ window.onerror = (message, source, lineno, colno, errorObj) => {
 	}) : null;
 
 	window.parent.postMessage({
-		type: 'horizons-runtime-error',
+		type: 'app-runtime-error',
 		message,
 		error: errorDetails
 	}, '*');
 };
 `;
 
-const configHorizonsConsoleErrroHandler = `
+const configConsoleErrorHandler = `
 const originalConsoleError = console.error;
 console.error = function(...args) {
 	originalConsoleError.apply(console, args);
@@ -94,7 +94,7 @@ console.error = function(...args) {
 	}
 
 	window.parent.postMessage({
-		type: 'horizons-console-error',
+		type: 'app-console-error',
 		error: errorString
 	}, '*');
 };
@@ -157,7 +157,7 @@ if (window.navigation && window.self !== window.top) {
 		}
 
 		window.parent.postMessage({
-			type: 'horizons-navigation-error',
+			type: 'app-navigation-error',
 			url,
 		}, '*');
 	});
@@ -171,19 +171,19 @@ const addTransformIndexHtml = {
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsRuntimeErrorHandler,
+				children: configRuntimeErrorHandler,
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsViteErrorHandler,
+				children: configViteErrorHandler,
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
-				attrs: {type: 'module'},
-				children: configHorizonsConsoleErrroHandler,
+				attrs: { type: 'module' },
+				children: configConsoleErrorHandler,
 				injectTo: 'head',
 			},
 			{
@@ -220,7 +220,7 @@ const addTransformIndexHtml = {
 	},
 };
 
-console.warn = () => {};
+console.warn = () => { };
 
 const logger = createLogger()
 const loggerError = logger.error
@@ -248,7 +248,7 @@ export default defineConfig({
 		allowedHosts: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json',],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},

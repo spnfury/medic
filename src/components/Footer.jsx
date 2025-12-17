@@ -8,22 +8,22 @@ const Footer = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
-            <img 
-              src="https://horizons-cdn.hostinger.com/a203137b-d9ed-4bad-a713-4486f4b6f75d/393dfc92b8f80fd49a8209553d724161.png" 
-              alt="SaludCheck365 logo" 
+            <img
+              src="/assets/footer-logo.png"
+              alt="SaludCheck365 logo"
               className="h-8 w-auto mb-8 opacity-90"
             />
             <p className="text-gray-500 text-lg font-light leading-relaxed max-w-sm mb-8">
               Redefiniendo el estándar global para la gestión de salud personal. Tecnología, seguridad y diseño en perfecta sincronía.
             </p>
             <div className="flex gap-4">
-               {/* Social placeholders */}
-               {['Twitter', 'Instagram', 'LinkedIn'].map(social => (
-                 <a key={social} href="#" className="text-gray-600 hover:text-white transition-colors text-sm font-medium">{social}</a>
-               ))}
+              {/* Social placeholders */}
+              {['Twitter', 'Instagram', 'LinkedIn'].map(social => (
+                <a key={social} href="#" className="text-gray-600 hover:text-white transition-colors text-sm font-medium">{social}</a>
+              ))}
             </div>
           </div>
-          
+
           <div className="md:col-span-2 md:col-start-7">
             <h4 className="font-bold mb-6 text-gray-200">Producto</h4>
             <ul className="space-y-4">
@@ -59,8 +59,8 @@ const Footer = () => {
             © 2026 SaludCheck365 Inc. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-2 text-gray-500 text-sm">
-             <span className="w-2 h-2 rounded-full bg-green-500"></span>
-             <span>Todos los sistemas operativos</span>
+            <span className="w-2 h-2 rounded-full bg-green-500"></span>
+            <span>Todos los sistemas operativos</span>
           </div>
         </div>
       </div>

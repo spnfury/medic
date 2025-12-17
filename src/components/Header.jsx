@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      <motion.header 
+      <motion.header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
           isScrolled ? "bg-white/80 backdrop-blur-md border-gray-100 py-3" : "bg-transparent py-6"
@@ -39,9 +39,9 @@ const Header = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-2 z-50">
             <a href="/" className="block relative">
-               <img 
-                src="https://horizons-cdn.hostinger.com/a203137b-d9ed-4bad-a713-4486f4b6f75d/212456ae9c3c78e309ad144af57301d2.png" 
-                alt="SaludCheck365 logo" 
+              <img
+                src="/assets/header-logo.png"
+                alt="SaludCheck365 logo"
                 className="h-8 md:h-10 w-auto object-contain"
               />
             </a>
@@ -50,9 +50,9 @@ const Header = () => {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.name}
-                href={link.href} 
+                href={link.href}
                 className="text-gray-600 hover:text-gray-900 font-medium text-lg tracking-wide transition-colors relative group"
               >
                 {link.name}
@@ -65,7 +65,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden z-50 p-2 text-gray-900"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -75,7 +75,7 @@ const Header = () => {
       </motion.header>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={cn(
           "fixed inset-0 bg-white z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden",
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -83,16 +83,16 @@ const Header = () => {
       >
         <nav className="flex flex-col items-center gap-8">
           {navLinks.map((link) => (
-            <a 
+            <a
               key={link.name}
-              href={link.href} 
+              href={link.href}
               className="text-3xl font-bold text-gray-900 hover:text-[#00CED1] transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
-          <Button 
+          <Button
             className="bg-[#00CED1] text-white hover:bg-[#00b8bb] rounded-full px-8 py-6 text-xl mt-4"
             onClick={() => setIsMobileMenuOpen(false)}
           >
