@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,24 +13,187 @@
     font-display: swap;
   }
 
-  body {
-    @apply bg-white text-gray-900;
-    font-family: 'Coolvetica Condensed', sans-serif; /* Applied Coolvetica Condensed */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  :root {
+    --primary: #00CED1;
+    --primary-dark: #00b8bb;
+    --secondary: #4A90E2;
+    --accent: #FF8C42;
+    --dark: #0F172A;
+    --light: #F8FAFC;
   }
 
   * {
     @apply border-gray-200;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', 'Coolvetica Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+    line-height: 1.1;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+    line-height: 1.3;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#00CED1] via-[#4A90E2] to-[#FF8C42];
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#00CED1] to-[#4A90E2] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-900 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-black hover:shadow-2xl hover:scale-105 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 lg:py-40;
+  }
+
+  .container-custom {
+    @apply max-w-[1400px] mx-auto px-6 md:px-12;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+
+  .rotate-x-6 {
+    transform: rotateX(6deg);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Premium shadows */
+  .shadow-premium {
+    box-shadow: 0 20px 60px -15px rgba(0, 206, 209, 0.3);
+  }
+
+  .shadow-premium-lg {
+    box-shadow: 0 30px 80px -20px rgba(0, 206, 209, 0.4);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Legal pages typography */
+  .legal-content {
+    @apply prose prose-lg max-w-none;
+  }
+
+  .legal-content h2 {
+    @apply text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24;
+  }
+
+  .legal-content h3 {
+    @apply text-xl md:text-2xl font-semibold text-gray-800 mt-8 mb-4;
+  }
+
+  .legal-content p {
+    @apply text-gray-700 leading-relaxed mb-6;
+  }
+
+  .legal-content ul {
+    @apply list-disc list-inside space-y-3 mb-6 text-gray-700;
+  }
+
+  .legal-content li {
+    @apply leading-relaxed;
+  }
+
+  .legal-content strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .legal-content a {
+    @apply text-[#00CED1] hover:text-[#00b8bb] underline transition-colors;
   }
 }
