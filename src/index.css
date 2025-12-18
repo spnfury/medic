@@ -39,7 +39,12 @@
     font-variation-settings: 'opsz' 32;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
     letter-spacing: -0.02em;
   }
@@ -121,9 +126,12 @@
   }
 
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
@@ -133,9 +141,11 @@
     0% {
       background-position: 0% 50%;
     }
+
     50% {
       background-position: 100% 50%;
     }
+
     100% {
       background-position: 0% 50%;
     }
@@ -166,7 +176,7 @@
 
   /* Legal pages typography */
   .legal-content {
-    @apply prose prose-lg max-w-none;
+    @apply max-w-none;
   }
 
   .legal-content h2 {
@@ -178,7 +188,7 @@
   }
 
   .legal-content p {
-    @apply text-gray-700 leading-relaxed mb-6;
+    @apply text-gray-700 leading-relaxed mb-6 text-base;
   }
 
   .legal-content ul {
@@ -186,7 +196,7 @@
   }
 
   .legal-content li {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-base;
   }
 
   .legal-content strong {
