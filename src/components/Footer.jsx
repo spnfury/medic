@@ -8,7 +8,7 @@ const Footer = () => {
 
   const footerLinks = {
     product: [
-      { name: 'Características', href: '#que-es' },
+      { name: 'Características', href: '#caracteristicas' },
       { name: 'Cómo funciona', href: '#como-funciona' },
       { name: 'Seguridad', href: '#' },
       { name: 'Precios', href: '#' },
@@ -34,10 +34,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-[#0B0F17] via-[#0F1419] to-[#050505] text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-[#0C25A3] via-[#0a1f8a] to-[#050505] text-white relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#00CED1]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#4A90E2]/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#1CAEC1]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FC7C49]/5 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         {/* Main Footer Content */}
@@ -57,7 +57,7 @@ const Footer = () => {
                 className="h-10 w-auto mb-6 opacity-90"
               />
               <p className="text-gray-400 text-lg leading-relaxed max-w-md mb-8">
-                Redefiniendo el estándar global para la gestión de salud personal. Tecnología, seguridad y diseño en perfecta sincronía.
+                Tu salud, nuestra prioridad. Tecnología moderna, cercana y alineada con tu bienestar.
               </p>
 
               {/* Social Links */}
@@ -95,7 +95,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-[#00CED1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                        className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                       >
                         {link.name}
                       </a>
@@ -117,7 +117,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-[#00CED1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                        className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                       >
                         {link.name}
                       </a>
@@ -140,14 +140,14 @@ const Footer = () => {
                       {link.href.startsWith('/') ? (
                         <Link
                           to={link.href}
-                          className="text-gray-400 hover:text-[#00CED1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                          className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                         >
                           {link.name}
                         </Link>
                       ) : (
                         <a
                           href={link.href}
-                          className="text-gray-400 hover:text-[#00CED1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                          className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                         >
                           {link.name}
                         </a>

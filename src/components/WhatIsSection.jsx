@@ -30,18 +30,18 @@ const WhatIsSection = () => {
     <section id="que-es" className="py-32 bg-white relative">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-2xl"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-none">
-              El ecosistema de <br />
-              <span className="text-gray-400">tu bienestar.</span>
+              Tu salud <br />
+              <span className="text-gray-400">nuestra prioridad.</span>
             </h2>
             <p className="text-xl text-gray-500 font-light max-w-xl">
-              Más que una app, somos la infraestructura digital que conecta cada aspecto de tu salud para una vida más larga y plena.
+              Más que una app, somos tu compañero de confianza que te ayuda a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.
             </p>
           </motion.div>
         </div>

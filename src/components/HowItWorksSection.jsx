@@ -25,20 +25,20 @@ const HowItWorksSection = () => {
     {
       icon: BellRing,
       title: "Gestión",
-      desc: "Recibe alertas inteligentes y recordatorios personalizados.",
+      desc: "Programa tus citas y recibe recordatorios cuando se acerque la fecha.",
       color: "bg-indigo-100 text-indigo-600"
     }
   ];
 
   return (
-    <section id="como-funciona" className="py-32 bg-[#0B0F17] text-white relative overflow-hidden">
+    <section id="como-funciona" className="py-32 bg-[#0C25A3] text-white relative overflow-hidden">
       {/* Background Gradients */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[128px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[128px]" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#1CAEC1]/20 rounded-full blur-[128px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#FC7C49]/10 rounded-full blur-[128px]" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -46,14 +46,14 @@ const HowItWorksSection = () => {
           >
             Simplicidad radical.
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-400 font-light max-w-2xl mx-auto"
+            className="text-xl text-gray-300 font-light max-w-2xl mx-auto"
           >
-            Hemos eliminado la complejidad de la gestión médica. Cuatro pasos para tomar el control total.
+            Hemos simplificado la gestión de tu salud. Cuatro pasos para cuidarte mejor.
           </motion.p>
         </div>
 

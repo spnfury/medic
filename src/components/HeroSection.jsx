@@ -32,14 +32,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#00CED1] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#1CAEC1] animate-pulse" />
               <span className="text-sm font-medium text-gray-600 tracking-wide uppercase">La nueva era de la salud digital</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-gray-900 mb-8">
-              Tu salud, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00CED1] via-[#4A90E2] to-[#FF8C42]">
-                elevada.
+              Tu salud <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] via-[#0C25A3] to-[#FC7C49]">
+                nuestra prioridad
               </span>
             </h1>
 
@@ -50,33 +50,34 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Button
                 onClick={() => handleDownload('iOS')}
-                className="h-14 px-8 rounded-full bg-gray-900 hover:bg-black text-white text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg shadow-gray-200"
+                className="h-14 px-8 rounded-full bg-white hover:bg-gray-50 text-gray-900 text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg border-2 border-gray-200 hover:border-gray-300 flex items-center gap-3"
               >
-                <Apple className="mr-2 w-5 h-5" />
-                App Store
+                <Apple className="w-6 h-6" fill="currentColor" />
+                <span>App Store</span>
               </Button>
               <Button
                 onClick={() => handleDownload('Android')}
                 variant="outline"
-                className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-900 text-gray-900 text-lg font-medium bg-transparent hover:bg-transparent transition-all"
+                className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-300 text-gray-900 text-lg font-medium bg-white hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-3"
               >
-                Google Play
+                <Play className="w-6 h-6" fill="currentColor" />
+                <span>Google Play</span>
               </Button>
             </div>
 
             <div className="mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium">
               <div className="flex -space-x-3">
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="User 1" className="w-full h-full object-cover" src="/assets/users/user1.jpg" />
+                  <img alt="Usuario mayor 1" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=150&h=150" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="User 2" className="w-full h-full object-cover" src="/assets/users/user2.jpg" />
+                  <img alt="Usuario 2" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=150&h=150" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="User 3" className="w-full h-full object-cover" src="/assets/users/user3.jpg" />
+                  <img alt="Usuario mayor 2" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544120199-366916560ee1?auto=format&fit=crop&q=80&w=150&h=150" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="User 4" className="w-full h-full object-cover" src="/assets/users/user4.jpg" />
+                  <img alt="Usuario 4" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=150&h=150" />
                 </div>
               </div>
               <p>Con la confianza de +10,000 usuarios</p>
@@ -115,7 +116,7 @@ const HeroSection = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <div className="w-12 h-12 rounded-full bg-[#00CED1]/10 flex items-center justify-center text-[#00CED1]">
+                <div className="w-12 h-12 rounded-full bg-[#1CAEC1]/10 flex items-center justify-center text-[#1CAEC1]">
                   <ArrowRight className="w-6 h-6 rotate-[-45deg]" />
                 </div>
                 <div>
@@ -126,7 +127,7 @@ const HeroSection = () => {
             </div>
 
             {/* Background blobs for image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#00CED1]/20 to-[#4A90E2]/20 blur-3xl rounded-full transform scale-110 -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#0C25A3]/20 blur-3xl rounded-full transform scale-110 -z-10" />
           </motion.div>
         </div>
       </div>
