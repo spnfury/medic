@@ -68,16 +68,16 @@ const HeroSection = () => {
             <div className="mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium">
               <div className="flex -space-x-3">
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario mayor 1" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=150&h=150" />
+                  <img alt="Usuario 1" className="w-full h-full object-cover" src="/assets/users/user1.jpg" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario 2" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=150&h=150" />
+                  <img alt="Usuario 2" className="w-full h-full object-cover" src="/assets/users/user2.jpg" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario mayor 2" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544120199-366916560ee1?auto=format&fit=crop&q=80&w=150&h=150" />
+                  <img alt="Usuario 3" className="w-full h-full object-cover" src="/assets/users/user3.jpg" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario 4" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=150&h=150" />
+                  <img alt="Usuario 4" className="w-full h-full object-cover" src="/assets/users/user4.jpg" />
                 </div>
               </div>
               <p>Con la confianza de +10,000 usuarios</p>

@@ -15,7 +15,7 @@ const MedicalHistorySection = () => {
             className="order-2 lg:order-1"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#FF8C42]/20 to-[#FF6B35]/20 blur-3xl rounded-full transform scale-90" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
               <img
                 src="/assets/medical-history.png"
                 alt="Medical Dashboard UI"
@@ -50,9 +50,9 @@ const MedicalHistorySection = () => {
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-[1.1]">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] text-balance">
               Inteligencia artificial <br />
-              al servicio de tu <span className="text-[#00CED1]">historial.</span>
+              al servicio de tu <span className="text-[#1CAEC1]">historial.</span>
             </h2>
             <p className="text-xl text-gray-500 font-light mb-10 leading-relaxed">
               Olvídate de las carpetas físicas y los diagnósticos perdidos. Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.
@@ -66,7 +66,7 @@ const MedicalHistorySection = () => {
                 "Análisis de tendencias de salud"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#00CED1]/20 flex items-center justify-center text-[#00CED1] flex-shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-[#1CAEC1]/20 flex items-center justify-center text-[#1CAEC1] flex-shrink-0">
                     <CheckCircle2 size={14} />
                   </div>
                   <span className="text-lg text-gray-700 font-medium">{item}</span>

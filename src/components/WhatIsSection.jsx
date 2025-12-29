@@ -36,9 +36,12 @@ const WhatIsSection = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-none">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-none text-balance">
               Tu salud <br />
-              <span className="text-gray-400">nuestra prioridad.</span>
+              <span className="relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] to-[#F07C49] relative z-10">nuestra prioridad.</span>
+              </span>
             </h2>
             <p className="text-xl text-gray-500 font-light max-w-xl">
               Más que una app, somos tu compañero de confianza que te ayuda a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.
