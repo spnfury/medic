@@ -16,15 +16,17 @@
   :root {
     --primary: #1CAEC1;
     /* Turquesa Lite - Color principal */
-    --primary-dark: #0C25A3;
+    --primary-dark: #0E2B43;
     /* Blue - Azul corporativo */
-    --secondary: #0C25A3;
+    --secondary: #0E2B43;
     /* Blue - Azul corporativo para elementos secundarios */
-    --accent: #FC7C49;
+    --accent: #F07C49;
     /* Sol Orange - Naranja corporativo */
-    --dark: #0C25A3;
+    --dark: #0E2B43;
     /* Blue - Azul corporativo para fondos oscuros */
     --light: #F8FAFC;
+    --off-white: #EBEBEB;
+    /* Blanco Roto */
   }
 
   * {

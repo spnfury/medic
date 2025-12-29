@@ -31,10 +31,10 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="como-funciona" className="py-32 bg-[#0C25A3] text-white relative overflow-hidden">
+    <section id="como-funciona" className="py-32 bg-[#0E2B43] text-white relative overflow-hidden">
       {/* Background Gradients */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#1CAEC1]/20 rounded-full blur-[128px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#FC7C49]/10 rounded-full blur-[128px]" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#1CAEC1]/15 rounded-full blur-[128px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#F07C49]/15 rounded-full blur-[128px]" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24">
@@ -71,11 +71,11 @@ const HowItWorksSection = () => {
                 transition={{ delay: index * 0.15 }}
                 className="relative z-10 group"
               >
-                <div className="bg-[#151B2B] border border-gray-800 p-8 rounded-3xl h-full hover:border-gray-600 transition-colors duration-300">
-                  <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6 text-2xl font-bold`}>
+                <div className="bg-[#0A1F30] border border-white/5 p-8 rounded-3xl h-full hover:border-[#F07C49]/50 transition-all duration-500 group-hover:translate-y-[-8px] shadow-2xl">
+                  <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
                     <step.icon size={32} />
                   </div>
-                  <div className="text-6xl font-bold text-gray-800 mb-4 absolute top-4 right-6 select-none opacity-20 group-hover:opacity-40 transition-opacity">
+                  <div className="text-6xl font-bold text-white mb-4 absolute top-4 right-6 select-none opacity-5 group-hover:opacity-10 group-hover:text-[#F07C49] transition-all">
                     0{index + 1}
                   </div>
                   <h3 className="text-2xl font-bold mb-3">{step.title}</h3>

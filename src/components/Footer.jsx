@@ -34,10 +34,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-[#0C25A3] via-[#0a1f8a] to-[#050505] text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-[#0E2B43] via-[#0A1F30] to-[#050505] text-white relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#1CAEC1]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FC7C49]/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#1CAEC1]/10 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F07C49]/10 rounded-full blur-3xl opacity-30" />
 
       <div className="container-custom relative z-10">
         {/* Main Footer Content */}
@@ -95,7 +95,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                        className="text-gray-400 hover:text-[#F07C49] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                       >
                         {link.name}
                       </a>
@@ -117,7 +117,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                        className="text-gray-400 hover:text-[#F07C49] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                       >
                         {link.name}
                       </a>
@@ -140,14 +140,14 @@ const Footer = () => {
                       {link.href.startsWith('/') ? (
                         <Link
                           to={link.href}
-                          className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                          className="text-gray-400 hover:text-[#F07C49] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                         >
                           {link.name}
                         </Link>
                       ) : (
                         <a
                           href={link.href}
-                          className="text-gray-400 hover:text-[#1CAEC1] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                          className="text-gray-400 hover:text-[#F07C49] transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                         >
                           {link.name}
                         </a>

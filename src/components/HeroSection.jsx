@@ -21,7 +21,7 @@ const HeroSection = () => {
     <section className="relative min-h-[95vh] flex items-center pt-32 overflow-hidden bg-[#F8FAFC]">
       {/* Abstract Background Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#E0F7FA] to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#FFF3E0] to-transparent rounded-full blur-3xl opacity-50 translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#FFF3E0] via-[#F07C49]/5 to-transparent rounded-full blur-3xl opacity-50 translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -36,9 +36,9 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-gray-600 tracking-wide uppercase">La nueva era de la salud digital</span>
             </div>
 
-            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-gray-900 mb-8">
+            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-gray-900 mb-8 text-balance">
               Tu salud <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] via-[#0C25A3] to-[#FC7C49]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] via-[#0E2B43] to-[#F07C49] animate-gradient">
                 nuestra prioridad
               </span>
             </h1>
@@ -127,7 +127,7 @@ const HeroSection = () => {
             </div>
 
             {/* Background blobs for image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#0C25A3]/20 blur-3xl rounded-full transform scale-110 -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/30 via-[#F07C49]/20 to-[#0E2B43]/30 blur-3xl rounded-full transform scale-110 -z-10 animate-pulse-slow" />
           </motion.div>
         </div>
       </div>

@@ -13,14 +13,14 @@ Se han aplicado todas las recomendaciones del manual de marca de SaludCheck365 a
 Se han actualizado todos los colores para usar la paleta oficial del manual de marca:
 
 - **Turquesa Lite** (`#1CAEC1`) - Color principal
-- **Blue** (`#0C25A3`) - Azul corporativo para fondos oscuros
-- **Sol Orange** (`#FC7C49`) - Naranja corporativo
+- **Blue** (`#0E2B43`) - Azul corporativo para fondos oscuros
+- **Sol Orange** (`#F07C49`) - Naranja corporativo
 
 #### Archivos modificados:
 - `src/index.css` - Variables CSS actualizadas
-- `src/components/HeroSection.jsx` - Gradientes y elementos decorativos
-- `src/components/HowItWorksSection.jsx` - Fondo azul corporativo
-- `src/components/Footer.jsx` - Gradientes de fondo
+- `src/components/HeroSection.jsx` - Gradientes y elementos decorativos (más naranja)
+- `src/components/HowItWorksSection.jsx` - Fondo azul corporativo y acentos naranja
+- `src/components/Footer.jsx` - Gradientes de fondo y hover naranja
 
 ---
 
@@ -73,11 +73,11 @@ Se actualizaron los botones para incluir los logos oficiales de las tiendas:
 
 #### Sección "Cómo funciona":
 - **Antes**: Gris oscuro genérico (`#0B0F17`)
-- **Ahora**: Azul corporativo (`#0C25A3`)
+- **Ahora**: Azul corporativo (`#0E2B43`)
 
 #### Footer:
 - **Antes**: Gradiente con grises oscuros
-- **Ahora**: Gradiente con azul corporativo (`#0C25A3`)
+- **Ahora**: Gradiente con azul corporativo (`#0E2B43`)
 
 ---
 
@@ -86,10 +86,10 @@ Se actualizaron los botones para incluir los logos oficiales de las tiendas:
 | Archivo | Cambios Principales |
 |---------|-------------------|
 | `src/index.css` | Paleta de colores, gradientes, botones |
-| `src/components/HeroSection.jsx` | Título, botones, colores decorativos |
+| `src/components/HeroSection.jsx` | Título, botones, colores decorativos (naranja acentuado) |
 | `src/components/WhatIsSection.jsx` | Título y descripción |
-| `src/components/HowItWorksSection.jsx` | Fondo azul corporativo, lenguaje |
-| `src/components/Footer.jsx` | Gradientes, descripción, enlaces |
+| `src/components/HowItWorksSection.jsx` | Fondo azul corporativo, lenguaje, acentos naranja |
+| `src/components/Footer.jsx` | Gradientes, descripción, enlaces (hover naranja) |
 
 ---
 
@@ -98,11 +98,12 @@ Se actualizaron los botones para incluir los logos oficiales de las tiendas:
 ```css
 :root {
   --primary: #1CAEC1;        /* Turquesa Lite */
-  --primary-dark: #0C25A3;   /* Blue - Azul corporativo */
-  --secondary: #0C25A3;      /* Blue - Azul corporativo */
-  --accent: #FC7C49;         /* Sol Orange */
-  --dark: #0C25A3;           /* Blue - Para fondos oscuros */
+  --primary-dark: #0E2B43;   /* Blue - Azul corporativo */
+  --secondary: #0E2B43;      /* Blue - Azul corporativo */
+  --accent: #F07C49;         /* Sol Orange */
+  --dark: #0E2B43;           /* Blue - Para fondos oscuros */
   --light: #F8FAFC;
+  --off-white: #EBEBEB;      /* Blanco Roto */
 }
 ```
 
