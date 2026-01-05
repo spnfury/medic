@@ -21,7 +21,7 @@ const MedicalHistorySection = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section id="inteligencia-artificial" className="py-32 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
