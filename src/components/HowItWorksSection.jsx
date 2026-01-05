@@ -33,8 +33,7 @@ const HowItWorksSection = () => {
   return (
     <section id="como-funciona" className="py-32 bg-[#0E2B43] text-white relative overflow-hidden">
       {/* Background Gradients */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#1CAEC1]/15 rounded-full blur-[128px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#F07C49]/15 rounded-full blur-[128px]" />
+      {/* Background Gradients Removed for Flat Design */}
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24">
@@ -44,7 +43,7 @@ const HowItWorksSection = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
           >
-            Simplicidad radical.
+            Bienestar, sin complicaciones.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -71,8 +70,8 @@ const HowItWorksSection = () => {
                 transition={{ delay: index * 0.15 }}
                 className="relative z-10 group"
               >
-                <div className="bg-[#0A1F30] border border-white/5 p-8 rounded-3xl h-full hover:border-[#F07C49]/50 transition-all duration-500 group-hover:translate-y-[-8px] shadow-2xl">
-                  <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
+                <div className="bg-[#0E2B43] border border-white/5 p-8 rounded-3xl h-full hover:border-[#F07C49]/50 transition-all duration-500 group-hover:translate-y-[-8px]">
+                  <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6 text-2xl font-bold group-hover:scale-110 transition-transform`}>
                     <step.icon size={32} />
                   </div>
                   <div className="text-6xl font-bold text-white mb-4 absolute top-4 right-6 select-none opacity-5 group-hover:opacity-10 group-hover:text-[#F07C49] transition-all">

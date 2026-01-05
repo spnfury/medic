@@ -93,7 +93,7 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="relative text-gray-600 hover:text-gray-900 font-medium text-base transition-colors group"
+                className="relative text-gray-600 hover:text-brand-blue font-medium text-base transition-colors group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
@@ -133,7 +133,7 @@ const Header = () => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X size={24} className="text-gray-900" />
+                  <X size={24} className="text-brand-blue" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -143,7 +143,7 @@ const Header = () => {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu size={24} className="text-gray-900" />
+                  <Menu size={24} className="text-brand-blue" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -163,7 +163,7 @@ const Header = () => {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-gray-900/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-brand-blue/20 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -183,7 +183,7 @@ const Header = () => {
                       key={link.name}
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-2xl font-semibold text-gray-900 hover:text-[#00CED1] transition-colors py-3 px-4 rounded-xl hover:bg-gray-50"
+                      className="text-2xl font-semibold text-brand-blue hover:text-[#00CED1] transition-colors py-3 px-4 rounded-xl hover:bg-gray-50"
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}

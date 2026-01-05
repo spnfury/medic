@@ -1,9 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MedicalHistorySection = () => {
+  const images = [
+    "/assets/app_screens/screen1.jpg",
+    "/assets/app_screens/screen2.jpg",
+    "/assets/app_screens/screen3.jpg",
+    "/assets/app_screens/screen4.jpg",
+    "/assets/app_screens/screen5.jpg"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section className="py-32 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -16,11 +32,21 @@ const MedicalHistorySection = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
-              <img
-                src="/assets/medical-history.png"
-                alt="Medical Dashboard UI"
-                className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white"
-              />
+
+              <div className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white overflow-hidden aspect-[9/19] max-w-sm mx-auto">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentIndex}
+                    src={images[currentIndex]}
+                    alt={`App Interface Screen ${currentIndex + 1}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+              </div>
 
               {/* Floating Element */}
               <motion.div
@@ -33,7 +59,7 @@ const MedicalHistorySection = () => {
                     <CheckCircle2 size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">Análisis Completado</p>
+                    <p className="font-bold text-brand-blue">Análisis Completado</p>
                     <p className="text-xs text-gray-400">Hace 2 minutos</p>
                   </div>
                 </div>
@@ -44,13 +70,14 @@ const MedicalHistorySection = () => {
             </div>
           </motion.div>
 
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] text-balance">
+            <h2 className="text-5xl md:text-6xl font-bold text-brand-blue mb-8 leading-[1.1] text-balance">
               Inteligencia artificial <br />
               al servicio de tu <span className="text-[#1CAEC1]">historial.</span>
             </h2>
@@ -74,9 +101,7 @@ const MedicalHistorySection = () => {
               ))}
             </div>
 
-            <Button className="h-14 px-8 rounded-full bg-white border-2 border-gray-200 text-gray-900 hover:border-gray-900 hover:bg-gray-50 text-lg font-medium transition-all">
-              Explorar características
-            </Button>
+
           </motion.div>
         </div>
       </div>

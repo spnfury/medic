@@ -65,7 +65,7 @@ const TermsOfUse = () => {
           <aside className="hidden lg:block lg:col-span-3">
             <div className="sticky top-24">
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
-                <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Contenido</h3>
+                <h3 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-4">Contenido</h3>
                 <nav className="space-y-1">
                   {sections.map((section) => {
                     const Icon = section.icon;
@@ -74,8 +74,8 @@ const TermsOfUse = () => {
                         key={section.id}
                         href={`#${section.id}`}
                         className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${activeSection === section.id
-                            ? 'bg-gradient-to-r from-[#00CED1] to-[#4A90E2] text-white shadow-md'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                          ? 'bg-gradient-to-r from-[#00CED1] to-[#4A90E2] text-white shadow-md'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-brand-blue'
                           }`}
                       >
                         <Icon className="w-4 h-4 flex-shrink-0" />
@@ -101,7 +101,7 @@ const TermsOfUse = () => {
                 <Scale className="w-4 h-4 text-purple-600" />
                 <span className="text-sm font-semibold text-gray-700">Actualizado: Diciembre 2025</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6 leading-tight">
                 Términos de <span className="gradient-text">Uso</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
@@ -260,7 +260,7 @@ const TermsOfUse = () => {
               <div className="bg-gradient-to-r from-[#00CED1]/10 to-[#4A90E2]/10 rounded-2xl p-6 border border-[#00CED1]/20 mt-12">
                 <div className="flex items-center gap-3 mb-4">
                   <Mail className="w-5 h-5 text-[#00CED1]" />
-                  <h3 className="text-lg font-semibold text-gray-900 m-0">¿Tienes preguntas?</h3>
+                  <h3 className="text-lg font-semibold text-brand-blue m-0">¿Tienes preguntas?</h3>
                 </div>
                 <p className="text-gray-700 mb-3">
                   Si tienes dudas sobre estos términos o necesitas más información, contáctanos:

@@ -50,6 +50,11 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+				// Brand colors from manual de marca
+				'brand-blue': '#0E2B43',
+				'brand-turquoise': '#1CAEC1',
+				'brand-orange': '#F07C48',
+				'brand-off-white': '#EBEBEB',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

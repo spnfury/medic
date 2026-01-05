@@ -41,7 +41,7 @@ const Footer = () => {
 
       <div className="container-custom relative z-10">
         {/* Main Footer Content */}
-        <div className="pt-20 pb-12 border-b border-gray-800">
+        <div className="pt-20 pb-12 border-b border-brand-blue/20">
           <div className="grid md:grid-cols-12 gap-12 lg:gap-16">
             {/* Brand Column */}
             <motion.div
@@ -68,7 +68,7 @@ const Footer = () => {
                     <motion.a
                       key={social.name}
                       href={social.href}
-                      className={`w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-gray-800 hover:border-gray-700 flex items-center justify-center transition-all ${social.color}`}
+                      className={`w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-blue/20 hover:border-brand-blue/30 flex items-center justify-center transition-all ${social.color}`}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       aria-label={social.name}

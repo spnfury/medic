@@ -39,7 +39,7 @@ const TeamSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-gray-900"
+            className="text-5xl md:text-6xl font-bold text-brand-blue"
           >
             Construido por expertos.
           </motion.h2>
@@ -62,13 +62,13 @@ const TeamSection = () => {
                   src={member.image} />
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
+              <h3 className="text-2xl font-bold text-brand-blue mb-1">{member.name}</h3>
               <p className="text-[#00CED1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
 
               <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors"><Twitter size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Linkedin size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Twitter size={20} /></a>
               </div>
             </motion.div>
           ))}

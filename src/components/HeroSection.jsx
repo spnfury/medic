@@ -36,7 +36,7 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-gray-600 tracking-wide uppercase">La nueva era de la salud digital</span>
             </div>
 
-            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-gray-900 mb-8 text-balance">
+            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-brand-blue mb-8 text-balance">
               Tu salud <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] via-[#0E2B43] to-[#F07C49] animate-gradient">
                 nuestra prioridad
@@ -44,40 +44,41 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-lg leading-relaxed font-light">
-              La plataforma inteligente que centraliza tu historial médico y potencia tu bienestar con tecnología de vanguardia.
+              SaludCheck365 es una app que te cuida y te ayuda a prevenir enfermedades gracias a recomendaciones personalizadas basadas en algoritmos avanzados y conocimientos médicos avalados por un equipo de expertos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <Button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => handleDownload('iOS')}
-                className="h-14 px-8 rounded-full bg-white hover:bg-gray-50 text-gray-900 text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg border-2 border-gray-200 hover:border-gray-300 flex items-center gap-3"
+                className="h-14 transition-all"
               >
-                <Apple className="w-6 h-6" fill="currentColor" />
-                <span>App Store</span>
-              </Button>
-              <Button
+                <img src="/assets/app-store-logo.png" alt="Download on App Store" className="h-full w-auto object-contain" />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => handleDownload('Android')}
-                variant="outline"
-                className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-300 text-gray-900 text-lg font-medium bg-white hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-3"
+                className="h-14 transition-all"
               >
-                <Play className="w-6 h-6" fill="currentColor" />
-                <span>Google Play</span>
-              </Button>
+                <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto object-contain" />
+              </motion.button>
             </div>
 
             <div className="mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium">
               <div className="flex -space-x-3">
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario 1" className="w-full h-full object-cover" src="/assets/users/user1.jpg" />
+                  <img alt="Usuario 1" className="w-full h-full object-cover" src="/assets/users/user1.png" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario 2" className="w-full h-full object-cover" src="/assets/users/user2.jpg" />
+                  <img alt="Usuario 2" className="w-full h-full object-cover" src="/assets/users/user2.png" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario 3" className="w-full h-full object-cover" src="/assets/users/user3.jpg" />
+                  <img alt="Usuario 3" className="w-full h-full object-cover" src="/assets/users/user3.png" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                  <img alt="Usuario 4" className="w-full h-full object-cover" src="/assets/users/user4.jpg" />
+                  <img alt="Usuario 4" className="w-full h-full object-cover" src="/assets/users/user4.png" />
                 </div>
               </div>
               <p>Con la confianza de +10,000 usuarios</p>
@@ -92,7 +93,7 @@ const HeroSection = () => {
               <img
                 src="/assets/hero-image.png"
                 alt="App Interface Dashboard"
-                className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-gray-900/5 bg-gray-900"
+                className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-brand-blue/5 bg-brand-blue"
               />
 
               {/* Floating Cards */}
@@ -106,7 +107,7 @@ const HeroSection = () => {
                   </div>
                   <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
                 </div>
-                <p className="font-bold text-gray-900 text-sm">Cita cardiólogo</p>
+                <p className="font-bold text-brand-blue text-sm">Cita cardiólogo</p>
                 <p className="text-gray-400 text-xs">Mañana, 09:00 AM</p>
               </motion.div>
 
@@ -120,7 +121,7 @@ const HeroSection = () => {
                   <ArrowRight className="w-6 h-6 rotate-[-45deg]" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 text-lg">Todo en orden</p>
+                  <p className="font-bold text-brand-blue text-lg">Todo en orden</p>
                   <p className="text-gray-400 text-xs">Salud estable</p>
                 </div>
               </motion.div>
