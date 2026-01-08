@@ -70,13 +70,13 @@ const FeaturesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group"
+                            className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:bg-brand-blue hover:text-white transition-all duration-300 group"
                         >
                             <div className="w-14 h-14 rounded-2xl bg-[#0E2B43]/5 text-[#0E2B43] flex items-center justify-center mb-6 group-hover:bg-[#0E2B43] group-hover:text-white transition-colors">
                                 <feature.icon size={28} />
                             </div>
                             <h3 className="text-xl font-bold mb-4 text-brand-blue">{feature.title}</h3>
-                            <p className="text-gray-500 leading-relaxed">
+                            <p className="text-gray-500 leading-relaxed group-hover:text-gray-300">
                                 {feature.description}
                             </p>
                         </motion.div>
