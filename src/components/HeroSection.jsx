@@ -90,11 +90,13 @@ const HeroSection = () => {
             className="relative hidden lg:block"
           >
             <div className="relative z-10 transform perspective-1000 rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out">
-              <img
-                src="/assets/hero-image.png"
-                alt="App Interface Dashboard"
-                className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-brand-blue/5 bg-brand-blue"
-              />
+              <div className="overflow-hidden rounded-[2.5rem] border-8 border-brand-blue/5 bg-brand-blue drop-shadow-2xl">
+                <img
+                  src="/assets/hero-image.png"
+                  alt="App Interface Dashboard"
+                  className="w-full max-w-md mx-auto scale-[1.08] -translate-y-[3%]"
+                />
+              </div>
 
               {/* Floating Cards */}
               <motion.div

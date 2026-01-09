@@ -43,7 +43,7 @@ const MedicalHistorySection = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="w-full h-full object-cover object-[center_5%]"
+                    className="w-full h-full object-cover scale-[1.08] -translate-y-[3%]"
                   />
                 </AnimatePresence>
               </div>
