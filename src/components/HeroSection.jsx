@@ -94,7 +94,7 @@ const HeroSection = () => {
                 <img
                   src="/assets/hero-image.png"
                   alt="App Interface Dashboard"
-                  className="w-full max-w-md mx-auto scale-[1.12] -translate-y-[1%]"
+                  className="w-full max-w-md mx-auto scale-[1.06]"
                 />
               </div>
 
