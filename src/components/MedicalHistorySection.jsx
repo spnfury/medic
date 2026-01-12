@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MedicalHistorySection = () => {
@@ -20,6 +20,15 @@ const MedicalHistorySection = () => {
     }, 4000);
     return () => clearInterval(timer);
   }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <section id="inteligencia-artificial" className="py-32 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -33,7 +42,7 @@ const MedicalHistorySection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
 
-              <div className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white overflow-hidden aspect-[9/19] max-w-sm mx-auto">
+              <div className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white overflow-hidden aspect-[9/19] max-w-sm mx-auto group">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentIndex}
@@ -43,9 +52,25 @@ const MedicalHistorySection = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="w-full h-full object-cover scale-[1.06]"
+                    className="w-full h-full object-cover"
                   />
                 </AnimatePresence>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-brand-blue p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 backdrop-blur-sm"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-brand-blue p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 backdrop-blur-sm"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight size={24} />
+                </button>
               </div>
 
               {/* Floating Element */}
