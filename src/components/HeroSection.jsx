@@ -37,9 +37,9 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-brand-blue mb-8 text-balance">
-              Tu salud <br />
+              Te ayuda a <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] via-[#0E2B43] to-[#F07C49] animate-gradient">
-                nuestra prioridad
+                prevenir enfermedades
               </span>
             </h1>
 

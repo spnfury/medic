@@ -113,9 +113,9 @@ const MedicalHistorySection = () => {
             <div className="space-y-6 mb-10">
               {[
                 "Historial cronológico unificado",
-                "Recordatorios de medicación inteligentes",
-                "Compartir perfil con doctores vía QR seguro",
-                "Análisis de tendencias de salud"
+                "Recordatorios de exámenes periódicos",
+                "Sube y almacena tus resultados",
+                "Orientación profesional (Premium)"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-6 h-6 rounded-full bg-[#1CAEC1]/20 flex items-center justify-center text-[#1CAEC1] flex-shrink-0">

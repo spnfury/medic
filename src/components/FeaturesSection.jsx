@@ -7,23 +7,23 @@ const FeaturesSection = () => {
     const features = [
         {
             icon: Activity,
-            title: "Monitoreo Constante",
-            description: "Sigue tus signos vitales y métricas de salud en tiempo real con integración de wearables."
+            title: "Recomendaciones Personalizadas",
+            description: "Recibe un plan de pruebas a medida basado en tu edad, antecedentes y estilo de vida."
         },
         {
             icon: Shield,
-            title: "Seguridad Robusta",
-            description: "Tus datos están protegidos con encriptación de grado médico y autenticación biométrica."
+            title: "Avalado por Expertos",
+            description: "Algoritmos diseñados con rigor médico para garantizar la precisión de cada recomendación."
+        },
+        {
+            icon: Smartphone, // Reusing Smartphone for 'Active' feel or generic app usage, or maybe Calendar/Bell for reminders if we had that. Let's stick to Smartphone or similar.
+            title: "Prevención Activa",
+            description: "No esperes a enfermar. Antiguanse con chequeos periódicos sugeridos automáticamente."
         },
         {
             icon: Calendar,
-            title: "Gestión de Citas",
-            description: "Organiza tu agenda médica y recibe recordatorios inteligentes directamente en tu móvil."
-        },
-        {
-            icon: Smartphone,
-            title: "Historial Digital",
-            description: "Accede a todos tus informes pediátricos, análisis y recetas desde un solo lugar seguro."
+            title: "Historial Estructurado",
+            description: "Tu línea de vida médica organizada cronológicamente. Llévala contigo a cualquier especialista."
         }
     ];
 
