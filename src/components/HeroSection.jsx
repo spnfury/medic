@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Check, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -10,7 +10,7 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
-    }, 5000); // Switch every 5 seconds
+    }, 3000); // Switch every 3 seconds
     return () => clearInterval(timer);
   }, []);
   const { toast } = useToast();
@@ -94,62 +94,95 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Right Column - Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="md:w-1/2 relative h-[600px] flex items-center justify-center pointer-events-none"
-          >
+          <div className="md:w-1/2 relative h-[600px] flex items-center justify-center pointer-events-none">
             {/* Background Blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#1CAEC1]/20 to-[#F07C49]/20 rounded-full blur-3xl -z-10" />
 
-            {/* Phone 1 (Back/Left - Body Map Full) */}
-            <motion.div
-              className="absolute left-0 top-10 w-[280px] h-[580px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform -rotate-6 z-10"
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              <img
-                src="/assets/body-map-full.jpg"
-                alt="Mapa corporal completo"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
+            {/* Carousel Container */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                {currentSlide === 0 ? (
+                  <motion.div
+                    key="prevention"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    {/* Phone 1 (Back/Left - Body Map Full) */}
+                    <motion.div
+                      className="absolute left-4 top-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform -rotate-6 z-10"
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <img src="/assets/body-map-full.jpg" alt="Mapa corporal completo" className="w-full h-full object-cover" />
+                    </motion.div>
 
-            {/* Phone 2 (Front/Right - Face Map) */}
-            <motion.div
-              className="absolute right-0 bottom-10 w-[280px] h-[580px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3 z-20"
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <img
-                src="/assets/body-map-face.jpg"
-                alt="Mapa facial"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
+                    {/* Phone 2 (Front/Right - Face Map) */}
+                    <motion.div
+                      className="absolute right-4 bottom-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3 z-20"
+                      initial={{ x: 20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <img src="/assets/body-map-face.jpg" alt="Mapa facial" className="w-full h-full object-cover" />
+                    </motion.div>
 
-            {/* Floating Badge (Updated for context) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="absolute top-20 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-30"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
-                </div>
-                <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
-              </div>
-              <div className="space-y-1">
-                <p className="font-bold text-brand-blue text-sm">Cita dermatólogo</p>
-                <p className="text-xs text-gray-400">Revisión anual recomendada</p>
-              </div>
-            </motion.div>
-          </motion.div>
+                    {/* Floating Badge (Prevention) */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                      className="absolute top-24 -right-2 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-30"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
+                          <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="font-bold text-brand-blue text-sm">Cita dermatólogo</p>
+                        <p className="text-xs text-gray-400">Revisión anual recomendada</p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="management"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    {/* Single Phone Dashboard */}
+                    <div className="relative w-[300px] h-[620px] bg-black rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-0 z-20">
+                      <img src="/assets/hero-image.png" alt="Dashboard Principal" className="w-full h-full object-cover" />
+                    </div>
+
+                    {/* Floating Badge (Status OK) */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 }}
+                      className="absolute bottom-40 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-30"
+                    >
+                      <div className="bg-green-100 p-2 rounded-full">
+                        <Check className="text-green-600 w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-brand-blue text-sm">Todo en orden</p>
+                        <p className="text-xs text-gray-400">Sin alertas pendientes</p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </div>
     </section>
