@@ -4,12 +4,49 @@ import { ArrowRight, Check, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
+// Data configuration for the slides
+const slides = [
+  {
+    id: 'body',
+    img: '/assets/body-map-full.jpg',
+    rotate: -6,
+    badge: {
+      title: 'Análisis Corporal',
+      sub: 'Escaneo preventivo',
+      icon: Shield,
+      position: 'bottom-left' // 'bottom-left' | 'top-right' | 'bottom-right'
+    }
+  },
+  {
+    id: 'face',
+    img: '/assets/body-map-face.jpg',
+    rotate: 3,
+    badge: {
+      title: 'Análisis Facial',
+      sub: 'Detección temprana',
+      icon: Shield,
+      position: 'top-right'
+    }
+  },
+  {
+    id: 'calendar',
+    img: '/assets/app_screens/screen1.jpg',
+    rotate: -3,
+    badge: {
+      title: 'Gestión Médica',
+      sub: 'Citas y seguimiento',
+      icon: Check,
+      position: 'bottom-right'
+    }
+  }
+];
+
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 3000); // Switch every 3 seconds
     return () => clearInterval(timer);
   }, []);
@@ -98,86 +135,74 @@ const HeroSection = () => {
             {/* Background Blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#1CAEC1]/20 to-[#F07C49]/20 rounded-full blur-3xl -z-10" />
 
-            {/* Carousel Container */}
+            {/* Carousel Container - Depth Swap */}
             <div className="relative w-full h-full flex items-center justify-center">
+              {/* Body Map Phone (Left/Top) */}
+              <motion.div
+                animate={{
+                  scale: currentSlide === 1 ? 1.05 : 0.9,
+                  zIndex: currentSlide === 1 ? 30 : 10,
+                  opacity: currentSlide === 1 ? 1 : 0.6,
+                  filter: currentSlide === 1 ? 'blur(0px)' : 'blur(1px)',
+                }}
+                transition={{ duration: 0.8 }}
+                className="absolute left-4 top-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform -rotate-6"
+              >
+                <img src="/assets/body-map-full.jpg" alt="Mapa corporal completo" className="w-full h-full object-cover" />
+              </motion.div>
+
+              {/* Face Map Phone (Right/Bottom) */}
+              <motion.div
+                animate={{
+                  scale: currentSlide === 0 ? 1.05 : 0.9,
+                  zIndex: currentSlide === 0 ? 30 : 10,
+                  opacity: currentSlide === 0 ? 1 : 0.6,
+                  filter: currentSlide === 0 ? 'blur(0px)' : 'blur(1px)',
+                }}
+                transition={{ duration: 0.8 }}
+                className="absolute right-4 bottom-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3"
+              >
+                <img src="/assets/body-map-face.jpg" alt="Mapa facial" className="w-full h-full object-cover" />
+              </motion.div>
+
+              {/* Floating Badge (Contextual) */}
               <AnimatePresence mode="wait">
                 {currentSlide === 0 ? (
                   <motion.div
-                    key="prevention"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.05 }}
-                    transition={{ duration: 0.8 }}
-                    className="absolute inset-0 flex items-center justify-center"
+                    key="badge-face"
+                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute top-24 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-40"
                   >
-                    {/* Phone 1 (Back/Left - Body Map Full) */}
-                    <motion.div
-                      className="absolute left-4 top-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform -rotate-6 z-10"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.1 }}
-                    >
-                      <img src="/assets/body-map-full.jpg" alt="Mapa corporal completo" className="w-full h-full object-cover" />
-                    </motion.div>
-
-                    {/* Phone 2 (Front/Right - Face Map) */}
-                    <motion.div
-                      className="absolute right-4 bottom-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3 z-20"
-                      initial={{ x: 20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <img src="/assets/body-map-face.jpg" alt="Mapa facial" className="w-full h-full object-cover" />
-                    </motion.div>
-
-                    {/* Floating Badge (Prevention) */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6 }}
-                      className="absolute top-24 -right-2 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-30"
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
-                        </div>
-                        <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
+                        <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
                       </div>
-                      <div className="space-y-1">
-                        <p className="font-bold text-brand-blue text-sm">Cita dermatólogo</p>
-                        <p className="text-xs text-gray-400">Revisión anual recomendada</p>
-                      </div>
-                    </motion.div>
+                      <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-bold text-brand-blue text-sm">Análisis Facial</p>
+                      <p className="text-xs text-gray-400">Detección temprana</p>
+                    </div>
                   </motion.div>
                 ) : (
                   <motion.div
-                    key="management"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.05 }}
-                    transition={{ duration: 0.8 }}
-                    className="absolute inset-0 flex items-center justify-center"
+                    key="badge-body"
+                    initial={{ opacity: 0, x: -10, scale: 0.9 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    exit={{ opacity: 0, x: 10, scale: 0.9 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute bottom-40 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-40"
                   >
-                    {/* Single Phone Dashboard */}
-                    <div className="relative w-[300px] h-[620px] bg-black rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-0 z-20">
-                      <img src="/assets/hero-image.png" alt="Dashboard Principal" className="w-full h-full object-cover" />
+                    <div className="bg-blue-100 p-2 rounded-full">
+                      <Shield className="text-brand-blue w-5 h-5" />
                     </div>
-
-                    {/* Floating Badge (Status OK) */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 }}
-                      className="absolute bottom-40 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-30"
-                    >
-                      <div className="bg-green-100 p-2 rounded-full">
-                        <Check className="text-green-600 w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-brand-blue text-sm">Todo en orden</p>
-                        <p className="text-xs text-gray-400">Sin alertas pendientes</p>
-                      </div>
-                    </motion.div>
+                    <div>
+                      <p className="font-bold text-brand-blue text-sm">Análisis Corporal</p>
+                      <p className="text-xs text-gray-400">Escaneo preventivo</p>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
