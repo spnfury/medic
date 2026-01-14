@@ -27,17 +27,6 @@ const slides = [
       icon: Shield,
       position: 'top-right'
     }
-  },
-  {
-    id: 'calendar',
-    img: '/assets/app_screens/screen1.jpg',
-    rotate: -3,
-    badge: {
-      title: 'Gestión Médica',
-      sub: 'Citas y seguimiento',
-      icon: Check,
-      position: 'bottom-right'
-    }
   }
 ];
 
@@ -135,76 +124,66 @@ const HeroSection = () => {
             {/* Background Blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#1CAEC1]/20 to-[#F07C49]/20 rounded-full blur-3xl -z-10" />
 
-            {/* Carousel Container - Depth Swap */}
+            {/* Carousel Container - Clean Slide Track */}
             <div className="relative w-full h-full flex items-center justify-center">
-              {/* Body Map Phone (Left/Top) */}
-              <motion.div
-                animate={{
-                  scale: currentSlide === 1 ? 1.05 : 0.9,
-                  zIndex: currentSlide === 1 ? 30 : 10,
-                  opacity: currentSlide === 1 ? 1 : 0.6,
-                  filter: currentSlide === 1 ? 'blur(0px)' : 'blur(1px)',
-                }}
-                transition={{ duration: 0.8 }}
-                className="absolute left-4 top-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform -rotate-6"
-              >
-                <img src="/assets/body-map-full.jpg" alt="Mapa corporal completo" className="w-full h-full object-cover" />
-              </motion.div>
+              <AnimatePresence mode="popLayout" custom={currentSlide}>
+                {/* We map specific logic for the active slide directly */}
 
-              {/* Face Map Phone (Right/Bottom) */}
-              <motion.div
-                animate={{
-                  scale: currentSlide === 0 ? 1.05 : 0.9,
-                  zIndex: currentSlide === 0 ? 30 : 10,
-                  opacity: currentSlide === 0 ? 1 : 0.6,
-                  filter: currentSlide === 0 ? 'blur(0px)' : 'blur(1px)',
-                }}
-                transition={{ duration: 0.8 }}
-                className="absolute right-4 bottom-10 w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3"
-              >
-                <img src="/assets/body-map-face.jpg" alt="Mapa facial" className="w-full h-full object-cover" />
-              </motion.div>
+                <motion.div
+                  key={slides[currentSlide].id}
+                  custom={currentSlide}
+                  initial={{ x: 100, scale: 0.8, opacity: 0, zIndex: 10 }}
+                  animate={{
+                    x: 0,
+                    scale: 1,
+                    opacity: 1,
+                    zIndex: 20,
+                    filter: 'brightness(1)'
+                  }}
+                  exit={{
+                    x: -100,
+                    scale: 0.8,
+                    opacity: 0,
+                    zIndex: 0,
+                    filter: 'brightness(0.5)'
+                  }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="absolute w-[260px] h-[540px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden"
+                >
+                  <img
+                    src={slides[currentSlide].img}
+                    alt={slides[currentSlide].badge.title}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
 
-              {/* Floating Badge (Contextual) */}
-              <AnimatePresence mode="wait">
-                {currentSlide === 0 ? (
-                  <motion.div
-                    key="badge-face"
-                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute top-24 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-40"
-                  >
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
-                        <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
-                      </div>
-                      <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="font-bold text-brand-blue text-sm">Análisis Facial</p>
-                      <p className="text-xs text-gray-400">Detección temprana</p>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="badge-body"
-                    initial={{ opacity: 0, x: -10, scale: 0.9 }}
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: 10, scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute bottom-40 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-40"
-                  >
-                    <div className="bg-blue-100 p-2 rounded-full">
-                      <Shield className="text-brand-blue w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-brand-blue text-sm">Análisis Corporal</p>
-                      <p className="text-xs text-gray-400">Escaneo preventivo</p>
-                    </div>
-                  </motion.div>
-                )}
+                {/* Floating Badge (Linked to Active) */}
+                <motion.div
+                  key={`badge-${slides[currentSlide].id}`}
+                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                  transition={{ duration: 0.3, delay: 0.2 }} // Delay slightly to sync with card arrival
+                  className={`absolute bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-40 ${slides[currentSlide].badge.position === 'top-right' ? 'top-24 -right-4' :
+                    slides[currentSlide].badge.position === 'bottom-left' ? 'bottom-40 -left-6' :
+                      'bottom-24 -right-2'
+                    }`}
+                >
+                  <div className={`p-2 rounded-full ${slides[currentSlide].id === 'face' ? 'bg-orange-100' : 'bg-blue-100'}`}>
+                    {slides[currentSlide].id === 'face' ? (
+                      <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
+                    ) : (
+                      (() => {
+                        const Icon = slides[currentSlide].badge.icon;
+                        return <Icon className="text-brand-blue w-5 h-5" />;
+                      })()
+                    )}
+                  </div>
+                  <div>
+                    <p className="font-bold text-brand-blue text-sm">{slides[currentSlide].badge.title}</p>
+                    <p className="text-xs text-gray-400">{slides[currentSlide].badge.sub}</p>
+                  </div>
+                </motion.div>
               </AnimatePresence>
             </div>
           </div>
