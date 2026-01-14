@@ -5,23 +5,11 @@ import { Linkedin, Twitter } from 'lucide-react';
 const TeamSection = () => {
   const team = [
     {
-      name: "Dr. Elena Torres",
-      role: "Chief Medical Officer",
-      image: "/assets/team/elena-torres.jpg",
-      bio: "20+ años en cardiología preventiva. Ex-Directora en Hospital Central."
+      name: "Dr. Alex Hugué",
+      role: "Founder & Chief Medical Officer",
+      image: "/assets/team/alex-hugue.png", // Real image
+      bio: "Médico especialista con visión innovadora en medicina preventiva."
     },
-    {
-      name: "Carlos Méndez",
-      role: "CTO & Co-Founder",
-      image: "/assets/team/carlos-mendez.jpg",
-      bio: "Arquitecto de sistemas seguros. Anteriormente liderando ciberseguridad en Fintech."
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Head of Product",
-      image: "/assets/team/sarah-johnson.jpg",
-      bio: "Especialista en UX de salud. Enfocada en accesibilidad y diseño humano."
-    }
   ];
 
   return (
@@ -45,7 +33,7 @@ const TeamSection = () => {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex justify-center max-w-4xl mx-auto">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -53,7 +41,7 @@ const TeamSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative"
+              className="group relative max-w-sm w-full"
             >
               <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-gray-200">
                 <img

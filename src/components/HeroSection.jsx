@@ -1,10 +1,18 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Apple, Play } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Check, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
 const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 5000); // Switch every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
   const { toast } = useToast();
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
@@ -33,7 +41,7 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
               <span className="w-2 h-2 rounded-full bg-[#1CAEC1] animate-pulse" />
-              <span className="text-sm font-medium text-gray-600 tracking-wide uppercase">La nueva era de la salud digital</span>
+              <span className="text-sm font-medium text-gray-600 tracking-wide uppercase">Tu salud, nuestra prioridad</span>
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-brand-blue mb-8 text-balance">
@@ -85,52 +93,62 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
+          {/* Right Column - Visual */}
           <motion.div
-            style={{ y: y1 }}
-            className="relative hidden lg:block"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="md:w-1/2 relative h-[600px] flex items-center justify-center pointer-events-none"
           >
-            <div className="relative z-10 transform perspective-1000 rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out">
-              <div className="overflow-hidden rounded-[2.5rem] border-8 border-brand-blue/5 bg-brand-blue drop-shadow-2xl">
-                <img
-                  src="/assets/hero-image.png"
-                  alt="App Interface Dashboard"
-                  className="w-full max-w-md mx-auto"
-                />
+            {/* Background Blob */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#1CAEC1]/20 to-[#F07C49]/20 rounded-full blur-3xl -z-10" />
+
+            {/* Phone 1 (Back/Left - Body Map Full) */}
+            <motion.div
+              className="absolute left-0 top-10 w-[280px] h-[580px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform -rotate-6 z-10"
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <img
+                src="/assets/body-map-full.jpg"
+                alt="Mapa corporal completo"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Phone 2 (Front/Right - Face Map) */}
+            <motion.div
+              className="absolute right-0 bottom-10 w-[280px] h-[580px] bg-black rounded-[2.5rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3 z-20"
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              <img
+                src="/assets/body-map-face.jpg"
+                alt="Mapa facial"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Floating Badge (Updated for context) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="absolute top-20 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-30"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
+                </div>
+                <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
               </div>
-
-              {/* Floating Cards */}
-              <motion.div
-                style={{ y: y2 }}
-                className="absolute top-20 -right-12 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-20"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
-                  </div>
-                  <span className="text-xs font-bold text-gray-400 uppercase">Alerta</span>
-                </div>
-                <p className="font-bold text-brand-blue text-sm">Cita cardiólogo</p>
-                <p className="text-gray-400 text-xs">Mañana, 09:00 AM</p>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-32 -left-12 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 z-20 flex items-center gap-4"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                <div className="w-12 h-12 rounded-full bg-[#1CAEC1]/10 flex items-center justify-center text-[#1CAEC1]">
-                  <ArrowRight className="w-6 h-6 rotate-[-45deg]" />
-                </div>
-                <div>
-                  <p className="font-bold text-brand-blue text-lg">Todo en orden</p>
-                  <p className="text-gray-400 text-xs">Salud estable</p>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Background blobs for image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/30 via-[#F07C49]/20 to-[#0E2B43]/30 blur-3xl rounded-full transform scale-110 -z-10 animate-pulse-slow" />
+              <div className="space-y-1">
+                <p className="font-bold text-brand-blue text-sm">Cita dermatólogo</p>
+                <p className="text-xs text-gray-400">Revisión anual recomendada</p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
