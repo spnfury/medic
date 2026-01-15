@@ -52,41 +52,42 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[95vh] flex items-center pt-32 overflow-hidden bg-[#F8FAFC]">
+    <section className="relative min-h-[90vh] md:min-h-[95vh] flex items-center pt-24 md:pt-32 overflow-hidden bg-[#F8FAFC]">
       {/* Abstract Background Elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#E0F7FA] to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#FFF3E0] via-[#F07C49]/5 to-transparent rounded-full blur-3xl opacity-50 translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-gradient-to-bl from-[#E0F7FA] to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-tr from-[#FFF3E0] via-[#F07C49]/5 to-transparent rounded-full blur-3xl opacity-50 translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 w-full relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center">
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
+            <div className="inline-flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-6 md:mb-8">
               <span className="w-2 h-2 rounded-full bg-[#1CAEC1] animate-pulse" />
-              <span className="text-sm font-medium text-gray-600 tracking-wide uppercase">Tu salud, nuestra prioridad</span>
+              <span className="text-xs md:text-sm font-medium text-gray-600 tracking-wide uppercase">Tu salud, nuestra prioridad</span>
             </div>
 
-            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-tight text-brand-blue mb-8 text-balance">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[0.95] tracking-tight text-brand-blue mb-6 md:mb-8 text-balance">
               Te ayuda a <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1CAEC1] via-[#0E2B43] to-[#F07C49] animate-gradient">
                 prevenir enfermedades
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-lg leading-relaxed font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-500 mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
               SaludCheck365 es una app que te cuida y te ayuda a prevenir enfermedades gracias a recomendaciones personalizadas basadas en algoritmos avanzados y conocimientos médicos avalados por un equipo de expertos.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-center justify-center lg:justify-start">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleDownload('iOS')}
-                className="h-14 transition-all"
+                className="h-12 md:h-14 transition-all"
               >
                 <img src="/assets/app-store-logo.png" alt="Download on App Store" className="h-full w-auto object-contain" />
               </motion.button>
@@ -94,33 +95,33 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleDownload('Android')}
-                className="h-14 transition-all"
+                className="h-12 md:h-14 transition-all"
               >
                 <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto object-contain" />
               </motion.button>
             </div>
 
-            <div className="mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium">
+            <div className="mt-8 md:mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium justify-center lg:justify-start">
               <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
                   <img alt="Usuario 1" className="w-full h-full object-cover" src="/assets/users/user1.png" />
                 </div>
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
                   <img alt="Usuario 2" className="w-full h-full object-cover" src="/assets/users/user2.png" />
                 </div>
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
                   <img alt="Usuario 3" className="w-full h-full object-cover" src="/assets/users/user3.png" />
                 </div>
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
                   <img alt="Usuario 4" className="w-full h-full object-cover" src="/assets/users/user4.png" />
                 </div>
               </div>
-              <p>Con la confianza de +10,000 usuarios</p>
+              <p className="text-xs md:text-sm">Con la confianza de +10,000 usuarios</p>
             </div>
           </motion.div>
 
-          {/* Right Column - Visual */}
-          <div className="md:w-1/2 relative h-[600px] flex items-center justify-center pointer-events-none">
+          {/* Right Column - Visual (hidden on mobile for better layout) */}
+          <div className="hidden lg:flex md:w-1/2 relative h-[600px] items-center justify-center pointer-events-none">
             {/* Background Blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#1CAEC1]/20 to-[#F07C49]/20 rounded-full blur-3xl -z-10" />
 

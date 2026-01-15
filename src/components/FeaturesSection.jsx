@@ -18,7 +18,7 @@ const FeaturesSection = () => {
         {
             icon: Smartphone, // Reusing Smartphone for 'Active' feel or generic app usage, or maybe Calendar/Bell for reminders if we had that. Let's stick to Smartphone or similar.
             title: "Prevención Activa",
-            description: "No esperes a enfermar. Antiguanse con chequeos periódicos sugeridos automáticamente."
+            description: "No esperes a enfermar. Anticípate con chequeos periódicos sugeridos automáticamente."
         },
         {
             icon: Calendar,

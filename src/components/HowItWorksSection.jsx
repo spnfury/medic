@@ -13,7 +13,7 @@ const HowItWorksSection = () => {
     {
       icon: UserCheck,
       title: "Verificación",
-      desc: "Crea tu ID seguro con validación biométrica.",
+      desc: "Crea tu perfil de salud seguro en pocos pasos.",
       color: "bg-teal-100 text-teal-600"
     },
     {

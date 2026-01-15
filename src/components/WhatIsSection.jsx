@@ -7,7 +7,7 @@ const WhatIsSection = () => {
     {
       icon: Activity,
       title: "Salud 360°",
-      description: "Visualiza métricas vitales, historial y proyecciones en un solo dashboard intuitivo."
+      description: "Accede a tu historial médico completo y organizado en un solo lugar."
     },
     {
       icon: ShieldCheck,
