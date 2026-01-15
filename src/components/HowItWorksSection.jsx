@@ -19,7 +19,7 @@ const HowItWorksSection = () => {
     {
       icon: FilePlus,
       title: "Digitalización",
-      desc: "Escanea o sube tus documentos médicos fácilmente.",
+      desc: "Sube tus documentos médicos de forma rápida y sencilla.",
       color: "bg-orange-100 text-orange-600"
     },
     {

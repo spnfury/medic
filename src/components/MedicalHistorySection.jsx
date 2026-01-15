@@ -42,36 +42,44 @@ const MedicalHistorySection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
 
-              <div className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white overflow-hidden aspect-[9/19] max-w-sm mx-auto group">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentIndex}
-                    src={images[currentIndex]}
-                    alt={`App Interface Screen ${currentIndex + 1}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full h-full object-cover"
-                  />
-                </AnimatePresence>
+              <div className="relative z-10 w-full rounded-[3rem] shadow-2xl border-[12px] border-slate-900 bg-slate-50 overflow-hidden aspect-[9/19] max-w-sm mx-auto group p-4 pt-12 flex flex-col">
+                {/* Dynamic Island */}
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-slate-900 rounded-full z-20 flex items-center justify-center">
+                  <div className="w-1 h-1 bg-blue-500/20 rounded-full ml-auto mr-3" />
+                </div>
 
-                {/* Navigation Arrows */}
-                <button
-                  onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-brand-blue p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 backdrop-blur-sm"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button
-                  onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-brand-blue p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 backdrop-blur-sm"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight size={24} />
-                </button>
+                <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-white">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentIndex}
+                      src={images[currentIndex]}
+                      alt={`App Interface Screen ${currentIndex + 1}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="w-full h-full object-contain bg-white"
+                    />
+                  </AnimatePresence>
+                </div>
+
               </div>
+
+              {/* Navigation Arrows - Moved outside the mockup for better visibility */}
+              <button
+                onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                className="absolute -left-6 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-brand-blue p-3 rounded-full shadow-xl transition-all duration-300 z-30 hover:scale-110 active:scale-95"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                className="absolute -right-6 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-brand-blue p-3 rounded-full shadow-xl transition-all duration-300 z-30 hover:scale-110 active:scale-95"
+                aria-label="Next slide"
+              >
+                <ChevronRight size={24} />
+              </button>
 
               {/* Floating Element */}
               <motion.div
