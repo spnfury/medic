@@ -8,7 +8,7 @@ import { useToast } from '@/components/ui/use-toast';
 const slides = [
   {
     id: 'body',
-    img: '/assets/app_screens/screen4.jpg',
+    img: '/assets/app_screens/body_recommendations.png',
     rotate: -6,
     badge: {
       title: 'Análisis Corporal',
@@ -19,7 +19,7 @@ const slides = [
   },
   {
     id: 'face',
-    img: '/assets/app_screens/screen2.jpg',
+    img: '/assets/app_screens/user_data_form.png',
     rotate: 3,
     badge: {
       title: 'Análisis Facial',

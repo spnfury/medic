@@ -5,11 +5,12 @@ import { Button } from '@/components/ui/button';
 
 const MedicalHistorySection = () => {
   const images = [
-    "/assets/app_screens/screen1.jpg",
-    "/assets/app_screens/screen2.jpg",
-    "/assets/app_screens/screen3.jpg",
-    "/assets/app_screens/screen4.jpg",
-    "/assets/app_screens/screen5.jpg"
+    "/assets/app_screens/body_recommendations.png",
+    "/assets/app_screens/medical_history.png",
+    "/assets/app_screens/test_detail.png",
+    "/assets/app_screens/calendar.png",
+    "/assets/app_screens/profile.png",
+    "/assets/app_screens/user_data_form.png"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
