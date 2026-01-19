@@ -43,13 +43,9 @@ const MedicalHistorySection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
 
-              <div className="relative z-10 w-full rounded-[3rem] shadow-2xl border-[12px] border-slate-900 bg-slate-50 overflow-hidden aspect-[9/19] max-w-sm mx-auto group p-4 pt-12 flex flex-col">
-                {/* Dynamic Island */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-slate-900 rounded-full z-20 flex items-center justify-center">
-                  <div className="w-1 h-1 bg-blue-500/20 rounded-full ml-auto mr-3" />
-                </div>
+              <div className="relative z-10 w-full rounded-[3rem] shadow-2xl border-[8px] border-slate-900 bg-slate-50 overflow-hidden aspect-[9/20] max-w-sm mx-auto group flex flex-col">
 
-                <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-white">
+                <div className="relative w-full h-full overflow-hidden bg-white">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={currentIndex}
@@ -59,7 +55,7 @@ const MedicalHistorySection = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.5 }}
-                      className="w-full h-full object-contain bg-white"
+                      className="w-full h-full object-cover bg-white"
                     />
                   </AnimatePresence>
                 </div>

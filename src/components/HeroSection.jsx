@@ -149,18 +149,14 @@ const HeroSection = () => {
                     filter: 'brightness(0.5)'
                   }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="absolute w-[300px] h-[600px] bg-slate-50 rounded-[3rem] border-[12px] border-slate-900 shadow-2xl overflow-hidden p-4 pt-12 flex flex-col"
+                  className="absolute w-[300px] aspect-[9/20] bg-slate-50 rounded-[3rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden flex flex-col"
                 >
-                  {/* Dynamic Island */}
-                  <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-slate-900 rounded-full z-20 flex items-center justify-center">
-                    <div className="w-1 h-1 bg-blue-500/20 rounded-full ml-auto mr-3" />
-                  </div>
 
-                  <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-white">
+                  <div className="relative w-full h-full overflow-hidden bg-white">
                     <img
                       src={slides[currentSlide].img}
                       alt={slides[currentSlide].badge.title}
-                      className="w-full h-full object-contain bg-white"
+                      className="w-full h-full object-cover bg-white"
                     />
                   </div>
                 </motion.div>
