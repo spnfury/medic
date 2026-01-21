@@ -13,7 +13,7 @@ const TeamSection = () => {
       name: "Edgar",
       role: "Ingeniero de Software",
       image: "/assets/team/edgar-bosch.jpg",
-      bio: "Historia de la startup: doctor Alex Hugué + ingeniero Edgar Boch, innovación + bienestar, app basada en algoritmos avanzados y conocimientos médicos."
+      bio: "Ingeniero de software y cofundador, enfocado en el desarrollo de algoritmos avanzados para la salud y el bienestar."
     }
   ];
 
