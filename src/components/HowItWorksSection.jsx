@@ -7,7 +7,7 @@ const HowItWorksSection = () => {
     {
       icon: Smartphone,
       title: "Instalación",
-      desc: "Descarga desde App Store o Google Play en segundos.",
+      desc: "Descárgala desde App Store o Google Play en segundos.",
       color: "bg-blue-100 text-blue-600"
     },
     {

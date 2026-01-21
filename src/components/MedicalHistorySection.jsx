@@ -108,19 +108,20 @@ const MedicalHistorySection = () => {
             className="order-1 lg:order-2"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-brand-blue mb-8 leading-[1.1] text-balance">
-              Inteligencia artificial <br />
-              al servicio de tu <span className="text-[#1CAEC1]">historial.</span>
+              Inteligencia Artificial <br />
+              al servicio de tu <span className="text-[#1CAEC1]">historial</span>
             </h2>
             <p className="text-xl text-gray-500 font-light mb-10 leading-relaxed">
-              Olvídate de las carpetas físicas y los diagnósticos perdidos. Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.
+              Olvídate de las carpetas físicas y los diagnósticos perdidos.
+              Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.
             </p>
 
             <div className="space-y-6 mb-10">
               {[
                 "Historial cronológico unificado",
                 "Recordatorios de exámenes periódicos",
-                "Sube y almacena tus resultados",
-                "Orientación profesional (Premium)"
+                "Subida y almacenamiento de resultados",
+                "Orientación profesional (disponible en plan Premium)"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-6 h-6 rounded-full bg-[#1CAEC1]/20 flex items-center justify-center text-[#1CAEC1] flex-shrink-0">

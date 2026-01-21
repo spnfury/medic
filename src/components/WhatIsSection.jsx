@@ -17,12 +17,12 @@ const WhatIsSection = () => {
     {
       icon: Zap,
       title: "Respuesta Inmediata",
-      description: "Acceso instantáneo a tus datos críticos en situaciones de emergencia, en cualquier lugar."
+      description: "Acceso instantáneo a tus datos críticos en situaciones de emergencia, estés donde estés."
     },
     {
       icon: Globe,
       title: "Cobertura Global",
-      description: "Tu historial viaja contigo, traducible y accesible en cualquier parte del mundo."
+      description: "Tu historial viaja contigo: traducible y accesible en cualquier parte del mundo."
     }
   ];
 
@@ -44,7 +44,7 @@ const WhatIsSection = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-500 font-light max-w-xl">
-              Más que una app, somos tu compañero de confianza que te ayuda a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.
+              Más que una app, somos tu compañero de confianza: te ayudamos a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.
             </p>
           </motion.div>
         </div>

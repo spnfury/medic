@@ -40,7 +40,7 @@ const PricingSection = () => {
                         <h3 className="text-2xl font-bold text-brand-blue mb-2">Gratuito</h3>
                         <p className="text-gray-400 mb-6 text-sm">Para empezar a cuidarte</p>
                         <div className="text-4xl font-bold text-brand-blue mb-8">
-                            0€ <span className="text-lg font-normal text-gray-400">/ para siempre</span>
+                            0 € <span className="text-lg font-normal text-gray-400">/ para siempre</span>
                         </div>
 
                         <ul className="space-y-4 mb-8">
@@ -54,7 +54,7 @@ const PricingSection = () => {
                             </li>
                             <li className="flex items-start gap-3 text-gray-600">
                                 <Check className="text-[#1CAEC1] shrink-0" size={20} />
-                                <span>Subida de pruebas (Límite básico)</span>
+                                <span>Subida de pruebas (límite básico)</span>
                             </li>
                             <li className="flex items-start gap-3 text-gray-400">
                                 <div className="w-5 h-5 flex items-center justify-center rounded-full bg-gray-100 text-gray-400 shrink-0">!</div>
@@ -81,7 +81,7 @@ const PricingSection = () => {
                         <h3 className="text-2xl font-bold mb-2">Premium</h3>
                         <p className="text-blue-200 mb-6 text-sm">Salud completa sin límites</p>
                         <div className="text-4xl font-bold mb-8">
-                            45€ <span className="text-lg font-normal text-blue-200">/ año</span>
+                            45 € <span className="text-lg font-normal text-blue-200">/ año</span>
                         </div>
 
                         <ul className="space-y-4 mb-8">
@@ -101,13 +101,13 @@ const PricingSection = () => {
                                 <div className="bg-[#1CAEC1] rounded-full p-1 mt-0.5">
                                     <Check className="text-white" size={12} />
                                 </div>
-                                <span>Sincronización con Calendario (Google/Outlook/Apple)</span>
+                                <span>Sincronización con Calendario (Google / Outlook / Apple)</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <div className="bg-[#1CAEC1] rounded-full p-1 mt-0.5">
                                     <Check className="text-white" size={12} />
                                 </div>
-                                <span><strong>Segunda opinión médica</strong> (hasta 5/año)</span>
+                                <span><strong>Segunda opinión médica</strong> (hasta 5 al año)</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <div className="bg-[#1CAEC1] rounded-full p-1 mt-0.5">
@@ -125,11 +125,11 @@ const PricingSection = () => {
 
                 <div className="mt-12 text-center">
                     <p className="text-gray-400 text-sm">
-                        * Servicio Concierge (recopilación de historial completo) disponible bajo demanda por 200€.
+                        * Servicio Concierge (recopilación de historial completo) disponible bajo demanda por 200 €.
                     </p>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

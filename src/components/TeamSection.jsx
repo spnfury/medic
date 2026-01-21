@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
 
 const TeamSection = () => {
   const team = [
@@ -10,6 +9,12 @@ const TeamSection = () => {
       image: "/assets/team/alex-hugue.png", // Real image
       bio: "Médico especialista con visión innovadora en medicina preventiva."
     },
+    {
+      name: "Edgar Bosch",
+      role: "Especialista en [Puesto]", // TODO: Update with user provided info
+      image: "/assets/team/edgar-bosch.jpg",
+      bio: "[Bio pendiente de confirmación por el usuario]"
+    }
   ];
 
   return (
@@ -33,7 +38,7 @@ const TeamSection = () => {
           </motion.h2>
         </div>
 
-        <div className="flex justify-center max-w-4xl mx-auto">
+        <div className="flex justify-center max-w-4xl mx-auto gap-12">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -54,10 +59,7 @@ const TeamSection = () => {
               <p className="text-[#00CED1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
 
-              <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Twitter size={20} /></a>
-              </div>
+
             </motion.div>
           ))}
         </div>

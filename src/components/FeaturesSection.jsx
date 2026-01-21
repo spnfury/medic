@@ -8,7 +8,7 @@ const FeaturesSection = () => {
         {
             icon: Activity,
             title: "Recomendaciones Personalizadas",
-            description: "Recibe un plan de pruebas a medida basado en tu edad, antecedentes y estilo de vida."
+            description: "Recibe un plan de pruebas a medida, basado en tu edad, antecedentes y estilo de vida."
         },
         {
             icon: Shield,

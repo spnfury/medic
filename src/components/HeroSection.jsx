@@ -79,7 +79,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-500 mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
-              SaludCheck365 es una app que te cuida y te ayuda a prevenir enfermedades gracias a recomendaciones personalizadas basadas en algoritmos avanzados y conocimientos médicos avalados por un equipo de expertos.
+              SaludCheck365 es una app que te cuida y te ayuda a prevenir enfermedades, gracias a recomendaciones personalizadas basadas en algoritmos avanzados y conocimientos médicos avalados por un equipo de expertos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-center justify-center lg:justify-start">
