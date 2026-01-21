@@ -10,10 +10,10 @@ const TeamSection = () => {
       bio: "Médico especialista con visión innovadora en medicina preventiva."
     },
     {
-      name: "Edgar Bosch",
-      role: "Especialista en [Puesto]", // TODO: Update with user provided info
+      name: "Edgar",
+      role: "Ingeniero de Software",
       image: "/assets/team/edgar-bosch.jpg",
-      bio: "[Bio pendiente de confirmación por el usuario]"
+      bio: "Historia de la startup: doctor Alex Hugué + ingeniero Edgar Boch, innovación + bienestar, app basada en algoritmos avanzados y conocimientos médicos."
     }
   ];
 
