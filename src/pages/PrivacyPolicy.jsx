@@ -279,7 +279,7 @@ const PrivacyPolicy = () => {
 
               <div className="mt-16 pt-8 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center">
-                  Última actualización: Diciembre 2025
+                  Última actualización: Enero 2026
                 </p>
               </div>
             </div>

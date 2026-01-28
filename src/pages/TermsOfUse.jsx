@@ -98,8 +98,8 @@ const TermsOfUse = () => {
             {/* Hero Section */}
             <div className="mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-200 mb-6">
-                <Scale className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-semibold text-gray-700">Actualizado: Diciembre 2025</span>
+                <Clock className="w-4 h-4 text-purple-600" />
+                <span className="text-sm font-semibold text-gray-700">Actualizado: Enero 2026</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6 leading-tight">
                 Términos de <span className="gradient-text">Uso</span>
@@ -123,11 +123,20 @@ const TermsOfUse = () => {
                 <p>
                   La aceptación de los Términos se considera renovada automáticamente cada vez que accedes a la app o utilizas cualquiera de sus funcionalidades. Saludcheck365 podrá actualizar este documento en cualquier momento y notificará los cambios a través de la aplicación o por correo electrónico. El uso continuado de los Servicios tras dicha actualización implicará tu aceptación de la versión revisada.
                 </p>
+                <p>
+                  Estos Términos regulan tanto el uso individual de la aplicación como la interacción dentro de la comunidad digital de Saludcheck365, incluidos los servicios personalizados de bienestar, orientación médica y recomendaciones basadas en datos biomédicos o declarados por el usuario.
+                </p>
                 <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl my-6">
                   <p className="text-amber-900 font-medium mb-0">
-                    <strong>Importante:</strong> Saludcheck365 actúa como una plataforma tecnológica de información y orientación sanitaria, no como un centro médico ni como sustituto de un profesional de la salud. Los contenidos, evaluaciones, consejos o recomendaciones generados en la aplicación tienen carácter informativo y preventivo, sin constituir diagnóstico ni prescripción médica.
+                    <strong>Importante:</strong> Saludcheck365 actúa como una plataforma tecnológica de información y orientación sanitaria, no como un centro médico ni como sustituto de un profesional de la salud. Los contenidos, evaluaciones, consejos o recomendaciones generados en la aplicación tienen carácter informativo y preventivo, sin constituir diagnóstico ni prescripción médica. Toda decisión vinculada al tratamiento o manejo de enfermedades debe ser consultada con un profesional sanitario cualificado.
                   </p>
                 </div>
+                <p>
+                  Si utilizas los Servicios en nombre de otra persona o de una entidad (por ejemplo, una empresa o institución sanitaria), declaras que dispones de las autorizaciones necesarias para hacerlo.
+                </p>
+                <p>
+                  La aceptación de estos Términos implica haber leído y comprendido las cláusulas de limitación de responsabilidad, exención de garantías y resolución de disputas incluidas a continuación.
+                </p>
               </section>
 
               <section id="registro" className="scroll-mt-24">
@@ -143,6 +152,9 @@ const TermsOfUse = () => {
                 </p>
                 <p>
                   Cada usuario puede tener solo una cuenta personal, intransferible y protegida por credenciales seguras. Eres responsable de la confidencialidad de tu contraseña y de cualquier actividad realizada bajo tu cuenta. En caso de uso no autorizado o sospecha de violación de seguridad, debes notificarlo inmediatamente a <a href="mailto:saludcheck365@gmail.com">saludcheck365@gmail.com</a>.
+                </p>
+                <p>
+                  También podrás crear tu cuenta mediante servicios de terceros (como Apple, Google o Facebook). En ese caso, autorizas a Saludcheck365 a recibir información básica de tu perfil conforme a las políticas de privacidad de dichas plataformas.
                 </p>
               </section>
 
@@ -272,7 +284,7 @@ const TermsOfUse = () => {
 
               <div className="mt-16 pt-8 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center">
-                  Última actualización: Diciembre 2025
+                  Última actualización: Enero 2026
                 </p>
               </div>
             </div>
