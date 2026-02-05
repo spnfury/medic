@@ -6,14 +6,16 @@ const TeamSection = () => {
     {
       name: "Dr. Alex Hugué",
       role: "Founder & Chief Medical Officer",
+      location: "Barcelona",
       image: "/assets/team/alex-hugue.png", // Real image
       bio: "Médico especialista con visión innovadora en medicina preventiva."
     },
     {
-      name: "Edgar",
-      role: "Ingeniero de Software",
+      name: "Edgar Boch",
+      role: "Private Equity | Operating Partner | PHI Industrial Acquisitions",
+      location: "Barcelona, Catalonia",
       image: "/assets/team/edgar-bosch.jpg",
-      bio: "Ingeniero de software y cofundador, enfocado en el desarrollo de algoritmos avanzados para la salud y el bienestar."
+      bio: "Operative Partner en PHI Industrial Acquisitions."
     }
   ];
 
@@ -51,12 +53,15 @@ const TeamSection = () => {
               <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-gray-200">
                 <img
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src={member.image} />
               </div>
 
               <h3 className="text-2xl font-bold text-brand-blue mb-1">{member.name}</h3>
-              <p className="text-[#00CED1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
+              <p className="text-[#00CED1] font-medium mb-1 text-sm tracking-wide">{member.role}</p>
+              {member.location && (
+                <p className="text-gray-400 text-sm mb-3">{member.location}</p>
+              )}
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
 
 
