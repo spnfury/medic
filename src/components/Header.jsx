@@ -40,6 +40,7 @@ const Header = () => {
     { name: "Qué es", href: "#que-es" },
     { name: "Cómo funciona", href: "#como-funciona" },
     { name: "Características", href: "#caracteristicas" },
+    { name: "Inteligencia Artificial", href: "#inteligencia-artificial" },
     { name: "Equipo", href: "#equipo" },
   ];
 
@@ -93,7 +94,7 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="relative text-gray-600 hover:text-gray-900 font-medium text-base transition-colors group"
+                className="relative text-gray-600 hover:text-brand-blue font-medium text-base transition-colors group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
@@ -133,7 +134,7 @@ const Header = () => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X size={24} className="text-gray-900" />
+                  <X size={24} className="text-brand-blue" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -143,7 +144,7 @@ const Header = () => {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu size={24} className="text-gray-900" />
+                  <Menu size={24} className="text-brand-blue" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -200,16 +201,30 @@ const Header = () => {
                   transition={{ delay: 0.4 }}
                   className="mt-auto"
                 >
-                  <Button
-                    onClick={() => {
-                      handleDownload();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full btn-primary flex items-center justify-center gap-2 text-lg h-14"
-                  >
-                    <Download className="w-5 h-5" />
-                    <span>Descargar App</span>
-                  </Button>
+                  <div className="flex flex-col gap-3">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        handleDownload('iOS');
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="h-12 w-full"
+                    >
+                      <img src="/assets/app-store-logo.png" alt="Download on App Store" className="h-full w-auto mx-auto object-contain" />
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        handleDownload('Android');
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="h-12 w-full"
+                    >
+                      <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto mx-auto object-contain" />
+                    </motion.button>
+                  </div>
                 </motion.div>
 
                 {/* Footer Info */}

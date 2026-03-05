@@ -7,23 +7,23 @@ const FeaturesSection = () => {
     const features = [
         {
             icon: Activity,
-            title: "Monitoreo Constante",
-            description: "Sigue tus signos vitales y métricas de salud en tiempo real con integración de wearables."
+            title: "Recomendaciones Personalizadas",
+            description: "Recibe un plan de pruebas a medida, basado en tu edad, antecedentes y estilo de vida."
         },
         {
             icon: Shield,
-            title: "Seguridad Robusta",
-            description: "Tus datos están protegidos con encriptación de grado médico y autenticación biométrica."
+            title: "Avalado por Expertos",
+            description: "Algoritmos diseñados con rigor médico para garantizar la precisión de cada recomendación."
+        },
+        {
+            icon: Smartphone, // Reusing Smartphone for 'Active' feel or generic app usage, or maybe Calendar/Bell for reminders if we had that. Let's stick to Smartphone or similar.
+            title: "Prevención Activa",
+            description: "No esperes a enfermar. Anticípate con chequeos periódicos sugeridos automáticamente."
         },
         {
             icon: Calendar,
-            title: "Gestión de Citas",
-            description: "Organiza tu agenda médica y recibe recordatorios inteligentes directamente en tu móvil."
-        },
-        {
-            icon: Smartphone,
-            title: "Historial Digital",
-            description: "Accede a todos tus informes pediátricos, análisis y recetas desde un solo lugar seguro."
+            title: "Historial Estructurado",
+            description: "Tu línea de vida médica organizada cronológicamente. Llévala contigo a cualquier especialista."
         }
     ];
 
@@ -47,7 +47,7 @@ const FeaturesSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+                        className="text-4xl md:text-6xl font-bold text-brand-blue mb-6"
                     >
                         Todo lo que necesitas <br /> para tu bienestar
                     </motion.h2>
@@ -70,13 +70,13 @@ const FeaturesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group"
+                            className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:bg-brand-blue hover:text-white transition-all duration-300 group"
                         >
                             <div className="w-14 h-14 rounded-2xl bg-[#0E2B43]/5 text-[#0E2B43] flex items-center justify-center mb-6 group-hover:bg-[#0E2B43] group-hover:text-white transition-colors">
                                 <feature.icon size={28} />
                             </div>
-                            <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                            <p className="text-gray-500 leading-relaxed">
+                            <h3 className="text-xl font-bold mb-4 text-brand-blue group-hover:text-white">{feature.title}</h3>
+                            <p className="text-gray-500 leading-relaxed group-hover:text-gray-300">
                                 {feature.description}
                             </p>
                         </motion.div>

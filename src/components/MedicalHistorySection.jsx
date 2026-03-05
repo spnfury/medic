@@ -1,11 +1,37 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MedicalHistorySection = () => {
+  const images = [
+    "/assets/app_screens/body_recommendations.png",
+    "/assets/app_screens/medical_history.png",
+    "/assets/app_screens/test_detail.png",
+    "/assets/app_screens/calendar.png",
+    "/assets/app_screens/profile.png",
+    "/assets/app_screens/user_data_form.png"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section id="inteligencia-artificial" className="py-32 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
@@ -16,11 +42,41 @@ const MedicalHistorySection = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
-              <img
-                src="/assets/medical-history.png"
-                alt="Medical Dashboard UI"
-                className="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-white bg-white"
-              />
+
+              <div className="relative z-10 w-full rounded-[3rem] shadow-2xl border-[8px] border-slate-900 bg-slate-50 overflow-hidden aspect-[9/20] max-w-sm mx-auto group flex flex-col">
+
+                <div className="relative w-full h-full overflow-hidden bg-white">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentIndex}
+                      src={images[currentIndex]}
+                      alt={`App Interface Screen ${currentIndex + 1}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="w-full h-full object-cover bg-white"
+                    />
+                  </AnimatePresence>
+                </div>
+
+              </div>
+
+              {/* Navigation Arrows - Moved outside the mockup for better visibility */}
+              <button
+                onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                className="absolute -left-6 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-brand-blue p-3 rounded-full shadow-xl transition-all duration-300 z-30 hover:scale-110 active:scale-95"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                className="absolute -right-6 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-brand-blue p-3 rounded-full shadow-xl transition-all duration-300 z-30 hover:scale-110 active:scale-95"
+                aria-label="Next slide"
+              >
+                <ChevronRight size={24} />
+              </button>
 
               {/* Floating Element */}
               <motion.div
@@ -33,7 +89,7 @@ const MedicalHistorySection = () => {
                     <CheckCircle2 size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">Análisis Completado</p>
+                    <p className="font-bold text-brand-blue">Análisis Completado</p>
                     <p className="text-xs text-gray-400">Hace 2 minutos</p>
                   </div>
                 </div>
@@ -44,26 +100,28 @@ const MedicalHistorySection = () => {
             </div>
           </motion.div>
 
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] text-balance">
-              Inteligencia artificial <br />
-              al servicio de tu <span className="text-[#1CAEC1]">historial.</span>
+            <h2 className="text-5xl md:text-6xl font-bold text-brand-blue mb-8 leading-[1.1] text-balance">
+              Inteligencia Artificial <br />
+              al servicio de tu <span className="text-[#1CAEC1]">historial</span>
             </h2>
             <p className="text-xl text-gray-500 font-light mb-10 leading-relaxed">
-              Olvídate de las carpetas físicas y los diagnósticos perdidos. Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.
+              Olvídate de las carpetas físicas y los diagnósticos perdidos.
+              Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.
             </p>
 
             <div className="space-y-6 mb-10">
               {[
                 "Historial cronológico unificado",
-                "Recordatorios de medicación inteligentes",
-                "Compartir perfil con doctores vía QR seguro",
-                "Análisis de tendencias de salud"
+                "Recordatorios de exámenes periódicos",
+                "Subida y almacenamiento de resultados",
+                "Orientación profesional (disponible en plan Premium)"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-6 h-6 rounded-full bg-[#1CAEC1]/20 flex items-center justify-center text-[#1CAEC1] flex-shrink-0">
@@ -74,9 +132,7 @@ const MedicalHistorySection = () => {
               ))}
             </div>
 
-            <Button className="h-14 px-8 rounded-full bg-white border-2 border-gray-200 text-gray-900 hover:border-gray-900 hover:bg-gray-50 text-lg font-medium transition-all">
-              Explorar características
-            </Button>
+
           </motion.div>
         </div>
       </div>

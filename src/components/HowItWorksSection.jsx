@@ -7,19 +7,19 @@ const HowItWorksSection = () => {
     {
       icon: Smartphone,
       title: "Instalación",
-      desc: "Descarga desde App Store o Google Play en segundos.",
+      desc: "Descárgala desde App Store o Google Play en segundos.",
       color: "bg-blue-100 text-blue-600"
     },
     {
       icon: UserCheck,
       title: "Verificación",
-      desc: "Crea tu ID seguro con validación biométrica.",
+      desc: "Crea tu perfil de salud seguro en pocos pasos.",
       color: "bg-teal-100 text-teal-600"
     },
     {
       icon: FilePlus,
       title: "Digitalización",
-      desc: "Escanea o sube tus documentos médicos fácilmente.",
+      desc: "Sube tus documentos médicos de forma rápida y sencilla.",
       color: "bg-orange-100 text-orange-600"
     },
     {
@@ -33,8 +33,7 @@ const HowItWorksSection = () => {
   return (
     <section id="como-funciona" className="py-32 bg-[#0E2B43] text-white relative overflow-hidden">
       {/* Background Gradients */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#1CAEC1]/15 rounded-full blur-[128px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#F07C49]/15 rounded-full blur-[128px]" />
+      {/* Background Gradients Removed for Flat Design */}
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24">
@@ -44,7 +43,7 @@ const HowItWorksSection = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
           >
-            Simplicidad radical.
+            Bienestar, sin complicaciones.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

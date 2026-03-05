@@ -7,22 +7,22 @@ const WhatIsSection = () => {
     {
       icon: Activity,
       title: "Salud 360°",
-      description: "Visualiza métricas vitales, historial y proyecciones en un solo dashboard intuitivo."
+      description: "Accede a tu historial médico completo y organizado en un solo lugar."
     },
     {
       icon: ShieldCheck,
-      title: "Seguridad Militar",
+      title: "Tranquilidad Total",
       description: "Encriptación de extremo a extremo que supera los estándares de la industria médica."
     },
     {
       icon: Zap,
       title: "Respuesta Inmediata",
-      description: "Acceso instantáneo a tus datos críticos en situaciones de emergencia, en cualquier lugar."
+      description: "Acceso instantáneo a tus datos críticos en situaciones de emergencia, estés donde estés."
     },
     {
       icon: Globe,
       title: "Cobertura Global",
-      description: "Tu historial viaja contigo, traducible y accesible en cualquier parte del mundo."
+      description: "Tu historial viaja contigo: traducible y accesible en cualquier parte del mundo."
     }
   ];
 
@@ -36,7 +36,7 @@ const WhatIsSection = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-none text-balance">
+            <h2 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6 leading-none text-balance">
               Tu salud <br />
               <span className="relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#1CAEC1]/20 to-[#F07C49]/20 blur-3xl rounded-full transform scale-90 animate-pulse-slow" />
@@ -44,7 +44,7 @@ const WhatIsSection = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-500 font-light max-w-xl">
-              Más que una app, somos tu compañero de confianza que te ayuda a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.
+              Más que una app, somos tu compañero de confianza: te ayudamos a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.
             </p>
           </motion.div>
         </div>
@@ -60,7 +60,7 @@ const WhatIsSection = () => {
               className="group p-8 rounded-3xl bg-gray-50 hover:bg-[#0E2B43] hover:text-white transition-all duration-300 cursor-default"
             >
               <div className="w-14 h-14 rounded-2xl bg-white group-hover:bg-white/10 flex items-center justify-center mb-8 transition-colors shadow-sm">
-                <feature.icon className="w-7 h-7 text-gray-900 group-hover:text-white transition-colors" />
+                <feature.icon className="w-7 h-7 text-brand-blue group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-2xl font-bold mb-4 tracking-wide">{feature.title}</h3>
               <p className="text-gray-500 group-hover:text-gray-300 leading-relaxed text-lg font-light">

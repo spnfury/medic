@@ -1,26 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
 
 const TeamSection = () => {
   const team = [
     {
-      name: "Dr. Elena Torres",
-      role: "Chief Medical Officer",
-      image: "/assets/team/elena-torres.jpg",
-      bio: "20+ años en cardiología preventiva. Ex-Directora en Hospital Central."
+      name: "Dr. Alex Hugué",
+      role: "Founder & Chief Medical Officer",
+      location: "Barcelona",
+      image: "/assets/team/alex-hugue.png", // Real image
+      bio: "Médico especialista con visión innovadora en medicina preventiva."
     },
     {
-      name: "Carlos Méndez",
-      role: "CTO & Co-Founder",
-      image: "/assets/team/carlos-mendez.jpg",
-      bio: "Arquitecto de sistemas seguros. Anteriormente liderando ciberseguridad en Fintech."
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Head of Product",
-      image: "/assets/team/sarah-johnson.jpg",
-      bio: "Especialista en UX de salud. Enfocada en accesibilidad y diseño humano."
+      name: "Edgar Boch",
+      role: "Private Equity | Operating Partner | PHI Industrial Acquisitions",
+      location: "Barcelona, Catalonia",
+      image: "/assets/team/edgar-bosch.jpg",
+      bio: "Operative Partner en PHI Industrial Acquisitions."
     }
   ];
 
@@ -39,13 +34,13 @@ const TeamSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-gray-900"
+            className="text-5xl md:text-6xl font-bold text-brand-blue"
           >
             Construido por expertos.
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex justify-center max-w-4xl mx-auto gap-12">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -53,12 +48,12 @@ const TeamSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative"
+              className="group relative max-w-sm w-full"
             >
               <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-gray-200">
                 <img
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src={member.image} />
               </div>
 
@@ -66,10 +61,7 @@ const TeamSection = () => {
               <p className="text-[#1CAEC1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
 
-              <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors"><Twitter size={20} /></a>
-              </div>
+
             </motion.div>
           ))}
         </div>
