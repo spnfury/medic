@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Check, Shield } from 'lucide-react';
+import { ArrowRight, Check, Shield, Apple } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -96,7 +96,7 @@ const HeroSection = () => {
                 className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-300 text-gray-900 text-lg font-medium bg-white hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-3"
               >
                 <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto object-contain" />
-              </motion.button>
+              </Button>
             </div>
 
             <div className="mt-8 md:mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium justify-center lg:justify-start">
@@ -129,72 +129,73 @@ const HeroSection = () => {
                 className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-gray-900/5 bg-[#0E2B43]"
               />
 
-            {/* Carousel Container - Clean Slide Track */}
-            <div className="relative w-full h-full flex items-center justify-center">
-              <AnimatePresence mode="popLayout" custom={currentSlide}>
-                {/* We map specific logic for the active slide directly */}
+              {/* Carousel Container - Clean Slide Track */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                <AnimatePresence mode="popLayout" custom={currentSlide}>
+                  {/* We map specific logic for the active slide directly */}
 
-                <motion.div
-                  key={slides[currentSlide].id}
-                  custom={currentSlide}
-                  initial={{ x: 100, scale: 0.8, opacity: 0, zIndex: 10 }}
-                  animate={{
-                    x: 0,
-                    scale: 1,
-                    opacity: 1,
-                    zIndex: 20,
-                    filter: 'brightness(1)'
-                  }}
-                  exit={{
-                    x: -100,
-                    scale: 0.8,
-                    opacity: 0,
-                    zIndex: 0,
-                    filter: 'brightness(0.5)'
-                  }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="absolute w-[300px] aspect-[9/20] bg-slate-50 rounded-[3rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden flex flex-col"
-                >
+                  <motion.div
+                    key={slides[currentSlide].id}
+                    custom={currentSlide}
+                    initial={{ x: 100, scale: 0.8, opacity: 0, zIndex: 10 }}
+                    animate={{
+                      x: 0,
+                      scale: 1,
+                      opacity: 1,
+                      zIndex: 20,
+                      filter: 'brightness(1)'
+                    }}
+                    exit={{
+                      x: -100,
+                      scale: 0.8,
+                      opacity: 0,
+                      zIndex: 0,
+                      filter: 'brightness(0.5)'
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="absolute w-[300px] aspect-[9/20] bg-slate-50 rounded-[3rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden flex flex-col"
+                  >
 
-                  <div className="relative w-full h-full overflow-hidden bg-white">
-                    <img
-                      src={slides[currentSlide].img}
-                      alt={slides[currentSlide].badge.title}
-                      className="w-full h-full object-cover bg-white"
-                    />
-                  </div>
-                </motion.div>
+                    <div className="relative w-full h-full overflow-hidden bg-white">
+                      <img
+                        src={slides[currentSlide].img}
+                        alt={slides[currentSlide].badge.title}
+                        className="w-full h-full object-cover bg-white"
+                      />
+                    </div>
+                  </motion.div>
 
-                {/* Floating Badge (Linked to Active) */}
-                <motion.div
-                  key={`badge-${slides[currentSlide].id}`}
-                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.9 }}
-                  transition={{ duration: 0.3, delay: 0.2 }} // Delay slightly to sync with card arrival
-                  className={`absolute bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-40 ${slides[currentSlide].badge.position === 'top-right' ? 'top-24 -right-4' :
-                    slides[currentSlide].badge.position === 'bottom-left' ? 'bottom-40 -left-6' :
-                      'bottom-24 -right-2'
-                    }`}
-                >
-                  <div className={`p-2 rounded-full ${slides[currentSlide].id === 'face' ? 'bg-orange-100' : 'bg-blue-100'}`}>
-                    {slides[currentSlide].id === 'face' ? (
-                      <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
-                    ) : (
-                      (() => {
-                        const Icon = slides[currentSlide].badge.icon;
-                        return <Icon className="text-brand-blue w-5 h-5" />;
-                      })()
-                    )}
-                  </div>
-                  <div>
-                    <p className="font-bold text-brand-blue text-sm">{slides[currentSlide].badge.title}</p>
-                    <p className="text-xs text-gray-400">{slides[currentSlide].badge.sub}</p>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                  {/* Floating Badge (Linked to Active) */}
+                  <motion.div
+                    key={`badge-${slides[currentSlide].id}`}
+                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                    transition={{ duration: 0.3, delay: 0.2 }} // Delay slightly to sync with card arrival
+                    className={`absolute bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 z-40 ${slides[currentSlide].badge.position === 'top-right' ? 'top-24 -right-4' :
+                      slides[currentSlide].badge.position === 'bottom-left' ? 'bottom-40 -left-6' :
+                        'bottom-24 -right-2'
+                      }`}
+                  >
+                    <div className={`p-2 rounded-full ${slides[currentSlide].id === 'face' ? 'bg-orange-100' : 'bg-blue-100'}`}>
+                      {slides[currentSlide].id === 'face' ? (
+                        <div className="w-2 h-2 bg-[#F07C49] rounded-full animate-ping" />
+                      ) : (
+                        (() => {
+                          const Icon = slides[currentSlide].badge.icon;
+                          return <Icon className="text-brand-blue w-5 h-5" />;
+                        })()
+                      )}
+                    </div>
+                    <div>
+                      <p className="font-bold text-brand-blue text-sm">{slides[currentSlide].badge.title}</p>
+                      <p className="text-xs text-gray-400">{slides[currentSlide].badge.sub}</p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import MedicalHistorySection from '@/components/MedicalHistorySection';
 import TeamSection from '@/components/TeamSection';
-import FeaturesSection from '@/components/FeaturesSection';
+
 import DownloadSection from '@/components/DownloadSection';
 import Footer from '@/components/Footer';
 
@@ -25,7 +25,7 @@ const HomePage = () => {
         <HowItWorksSection />
         <FeaturesSection />
         <MedicalHistorySection />
-        <PricingSection />
+
         <TeamSection />
         <DownloadSection />
       </main>
