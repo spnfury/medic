@@ -7,6 +7,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import MedicalHistorySection from '@/components/MedicalHistorySection';
 import TeamSection from '@/components/TeamSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import DownloadSection from '@/components/DownloadSection';
 import Footer from '@/components/Footer';
 
 const HomePage = () => {
@@ -24,6 +25,7 @@ const HomePage = () => {
         <FeaturesSection />
         <MedicalHistorySection />
         <TeamSection />
+        <DownloadSection />
       </main>
       <Footer />
     </div>

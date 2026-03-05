@@ -71,11 +71,11 @@ const HowItWorksSection = () => {
                 transition={{ delay: index * 0.15 }}
                 className="relative z-10 group"
               >
-                <div className="bg-[#0A1F30] border border-white/5 p-8 rounded-3xl h-full hover:border-[#F07C49]/50 transition-all duration-500 group-hover:translate-y-[-8px] shadow-2xl">
+                <div className="bg-[#081b2a] border border-white/5 p-8 rounded-3xl h-full hover:border-[#F07C49]/50 transition-all duration-500 group-hover:translate-y-[-8px] shadow-2xl">
                   <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6 text-2xl font-bold shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
                     <step.icon size={32} />
                   </div>
-                  <div className="text-6xl font-bold text-white mb-4 absolute top-4 right-6 select-none opacity-5 group-hover:opacity-10 group-hover:text-[#F07C49] transition-all">
+                  <div className="text-6xl font-bold text-white/20 mb-4 absolute top-6 right-8 select-none group-hover:text-[#F07C49] group-hover:opacity-100 transition-all duration-500">
                     0{index + 1}
                   </div>
                   <h3 className="text-2xl font-bold mb-3">{step.title}</h3>

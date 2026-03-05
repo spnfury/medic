@@ -73,6 +73,10 @@ Se actualizaron los botones para incluir los logos oficiales de las tiendas:
 
 #### Sección "Cómo funciona":
 - **Antes**: Gris oscuro genérico (`#0B0F17`)
+- **Hero Secion**: El mockup del teléfono ahora usa `#0E2B43` como color de fondo.
+- **Header**: Los enlaces activos y los overlays de menú móvil se han ajustado al azul corporativo.
+- **Global**: Se ha realizado un barrido de todos los elementos oscuros (anteriormente negros o grises muy oscuros) para que utilen variaciones del azul corporativo `#0E2B43`, otorgando una identidad más coherente y rica.
+- **Normalización**: Reemplazos masivos de `#0C25A3` (azul antiguo) por `#0E2B43` (Blue oficial) en todos los componentes.
 - **Ahora**: Azul corporativo (`#0E2B43`)
 
 #### Footer:

@@ -30,10 +30,10 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   const handleDownload = () => {
-    toast({
-      title: "🚀 Próximamente",
-      description: "La descarga estará disponible muy pronto.",
-    });
+    const element = document.querySelector('#descargar');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const navLinks = [
@@ -99,7 +99,7 @@ const Header = () => {
                 transition={{ delay: index * 0.1 + 0.3 }}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00CED1] to-[#4A90E2] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1CAEC1] to-[#0E2B43] transition-all duration-300 group-hover:w-full" />
               </motion.a>
             ))}
 
@@ -163,7 +163,7 @@ const Header = () => {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-gray-900/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#0E2B43]/20 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -183,7 +183,7 @@ const Header = () => {
                       key={link.name}
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-2xl font-semibold text-gray-900 hover:text-[#00CED1] transition-colors py-3 px-4 rounded-xl hover:bg-gray-50"
+                      className="text-2xl font-semibold text-gray-900 hover:text-[#1CAEC1] transition-colors py-3 px-4 rounded-xl hover:bg-gray-50"
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}

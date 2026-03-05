@@ -31,7 +31,7 @@ const TeamSection = () => {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[#00CED1] font-bold tracking-widest uppercase text-sm mb-4 block"
+            className="text-[#1CAEC1] font-bold tracking-widest uppercase text-sm mb-4 block"
           >
             Mentes Brillantes
           </motion.span>
@@ -63,7 +63,7 @@ const TeamSection = () => {
               </div>
 
               <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
-              <p className="text-[#00CED1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
+              <p className="text-[#1CAEC1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
 
               <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">

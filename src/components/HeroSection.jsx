@@ -10,11 +10,11 @@ const HeroSection = () => {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
-  const handleDownload = (platform) => {
-    toast({
-      title: "🚧 Próximamente",
-      description: `La descarga para ${platform} estará disponible muy pronto.`,
-    });
+  const handleDownload = () => {
+    const element = document.querySelector('#descargar');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -49,14 +49,14 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Button
-                onClick={() => handleDownload('iOS')}
+                onClick={handleDownload}
                 className="h-14 px-8 rounded-full bg-white hover:bg-gray-50 text-gray-900 text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg border-2 border-gray-200 hover:border-gray-300 flex items-center gap-3"
               >
                 <Apple className="w-6 h-6" fill="currentColor" />
                 <span>App Store</span>
               </Button>
               <Button
-                onClick={() => handleDownload('Android')}
+                onClick={handleDownload}
                 variant="outline"
                 className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-300 text-gray-900 text-lg font-medium bg-white hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-3"
               >
@@ -92,7 +92,7 @@ const HeroSection = () => {
               <img
                 src="/assets/hero-image.png"
                 alt="App Interface Dashboard"
-                className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-gray-900/5 bg-gray-900"
+                className="w-full max-w-md mx-auto drop-shadow-2xl rounded-[2.5rem] border-8 border-gray-900/5 bg-[#0E2B43]"
               />
 
               {/* Floating Cards */}

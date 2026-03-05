@@ -57,7 +57,7 @@ const WhatIsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group p-8 rounded-3xl bg-gray-50 hover:bg-gray-900 hover:text-white transition-all duration-300 cursor-default"
+              className="group p-8 rounded-3xl bg-gray-50 hover:bg-[#0E2B43] hover:text-white transition-all duration-300 cursor-default"
             >
               <div className="w-14 h-14 rounded-2xl bg-white group-hover:bg-white/10 flex items-center justify-center mb-8 transition-colors shadow-sm">
                 <feature.icon className="w-7 h-7 text-gray-900 group-hover:text-white transition-colors" />
