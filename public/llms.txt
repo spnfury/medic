@@ -1,0 +1,4 @@
+## Pages
+- [Política de Privacidad - SaludCheck365](/privacypolicy): Política de privacidad de SaludCheck365. Conoce cómo protegemos tus datos personales y de salud.
+- [SaludCheck365 - Tu Salud, Nuestra Prioridad](/home): SaludCheck365 es tu compañero de salud personal. Gestiona tu historial médico, recibe recordatorios y mantén tu salud bajo control.
+- [Términos de Uso - SaludCheck365](/termsofuse): Términos de uso de SaludCheck365. Lee nuestras condiciones de servicio y uso de la plataforma.
