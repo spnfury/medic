@@ -1,23 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const TeamSection = () => {
-  const team = [
-    {
-      name: "Dr. Alex Hugué",
-      role: "Founder & Chief Medical Officer",
-      location: "Barcelona",
-      image: "/assets/team/alex-hugue.png", // Real image
-      bio: "Médico especialista con visión innovadora en medicina preventiva."
-    },
-    {
-      name: "Edgar Boch",
-      role: "Private Equity | Operating Partner | PHI Industrial Acquisitions",
-      location: "Barcelona, Catalonia",
-      image: "/assets/team/edgar-bosch.jpg",
-      bio: "Operative Partner en PHI Industrial Acquisitions."
-    }
-  ];
+const TeamSection = ({ content }) => {
+  const label = content?.label || 'Mentes Brillantes';
+  const title = content?.title || 'Construido por expertos.';
+  const members = content?.members || [];
 
   return (
     <section id="equipo" className="py-32 bg-gray-50">
@@ -28,7 +15,7 @@ const TeamSection = () => {
             whileInView={{ opacity: 1 }}
             className="text-[#00CED1] font-bold tracking-widest uppercase text-sm mb-4 block"
           >
-            Mentes Brillantes
+            {label}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -36,12 +23,12 @@ const TeamSection = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold text-brand-blue"
           >
-            Construido por expertos.
+            {title}
           </motion.h2>
         </div>
 
         <div className="flex justify-center max-w-4xl mx-auto gap-12">
-          {team.map((member, index) => (
+          {members.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -63,8 +50,6 @@ const TeamSection = () => {
                 <p className="text-gray-400 text-sm mb-3">{member.location}</p>
               )}
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
-
-
             </motion.div>
           ))}
         </div>

@@ -5,10 +5,15 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/components/ui/use-toast';
 
-const Header = () => {
+const Header = ({ content }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toast } = useToast();
+
+  const navLinks = content?.navLinks || [];
+  const ctaText = content?.ctaText || 'Descargar App';
+  const mobileFooterText = content?.mobileFooterText || 'Tu salud, nuestra prioridad';
+  const downloadToast = content?.downloadToast || { title: '🚀 Próximamente', description: 'La descarga estará disponible muy pronto.' };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,18 +36,10 @@ const Header = () => {
 
   const handleDownload = () => {
     toast({
-      title: "🚀 Próximamente",
-      description: "La descarga estará disponible muy pronto.",
+      title: downloadToast.title,
+      description: downloadToast.description,
     });
   };
-
-  const navLinks = [
-    { name: "Qué es", href: "#que-es" },
-    { name: "Cómo funciona", href: "#como-funciona" },
-    { name: "Características", href: "#caracteristicas" },
-    { name: "Inteligencia Artificial", href: "#inteligencia-artificial" },
-    { name: "Equipo", href: "#equipo" },
-  ];
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
@@ -114,7 +111,7 @@ const Header = () => {
                 className="btn-secondary flex items-center gap-2 shadow-lg hover:shadow-xl"
               >
                 <Download className="w-4 h-4" />
-                <span>Descargar App</span>
+                <span>{ctaText}</span>
               </Button>
             </motion.div>
           </nav>
@@ -235,7 +232,7 @@ const Header = () => {
                   className="mt-8 pt-6 border-t border-gray-200"
                 >
                   <p className="text-sm text-gray-500 text-center">
-                    Tu salud, nuestra prioridad
+                    {mobileFooterText}
                   </p>
                 </motion.div>
               </div>

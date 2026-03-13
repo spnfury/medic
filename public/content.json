@@ -1,0 +1,305 @@
+{
+    "meta": {
+        "title": "SaludCheck365 - Tu Salud, Nuestra Prioridad",
+        "description": "SaludCheck365 es tu compañero de salud personal. Gestiona tu historial médico, recibe recordatorios y mantén tu salud bajo control."
+    },
+    "header": {
+        "navLinks": [
+            {
+                "name": "Qué es",
+                "href": "#que-es"
+            },
+            {
+                "name": "Cómo funciona",
+                "href": "#como-funciona"
+            },
+            {
+                "name": "Características",
+                "href": "#caracteristicas"
+            },
+            {
+                "name": "Inteligencia Artificial",
+                "href": "#inteligencia-artificial"
+            },
+            {
+                "name": "Equipo",
+                "href": "#equipo"
+            }
+        ],
+        "ctaText": "Descargar App",
+        "mobileFooterText": "Tu salud, nuestra prioridad",
+        "downloadToast": {
+            "title": "🚀 Próximamente",
+            "description": "La descarga estará disponible muy pronto."
+        }
+    },
+    "hero": {
+        "badge": "Tu salud, nuestra prioridad",
+        "titleLine1": "Te ayuda a",
+        "titleLine2": "prevenir enfermedades",
+        "description": "SaludCheck365 es una app que te cuida y te ayuda a prevenir enfermedades, gracias a recomendaciones personalizadas basadas en algoritmos avanzados y conocimientos médicos avalados por un equipo de expertos.",
+        "trustText": "Con la confianza de +10,000 usuarios",
+        "downloadToast": {
+            "title": "🚧 Próximamente",
+            "description": "La descarga para {platform} estará disponible muy pronto."
+        },
+        "slides": [
+            {
+                "id": "body",
+                "img": "/assets/app_screens/body_recommendations.png",
+                "badgeTitle": "Análisis Corporal",
+                "badgeSub": "Escaneo preventivo"
+            },
+            {
+                "id": "face",
+                "img": "/assets/app_screens/user_data_form.png",
+                "badgeTitle": "Análisis Facial",
+                "badgeSub": "Detección temprana"
+            }
+        ]
+    },
+    "whatIs": {
+        "title": "Tu salud",
+        "titleHighlight": "nuestra prioridad.",
+        "description": "Más que una app, somos tu compañero de confianza: te ayudamos a cuidar tu salud con tecnología moderna, cercana y alineada con tu bienestar.",
+        "features": [
+            {
+                "icon": "Activity",
+                "title": "Salud 360°",
+                "description": "Accede a tu historial médico completo y organizado en un solo lugar."
+            },
+            {
+                "icon": "ShieldCheck",
+                "title": "Tranquilidad Total",
+                "description": "Encriptación de extremo a extremo que supera los estándares de la industria médica."
+            },
+            {
+                "icon": "Zap",
+                "title": "Respuesta Inmediata",
+                "description": "Acceso instantáneo a tus datos críticos en situaciones de emergencia, estés donde estés."
+            },
+            {
+                "icon": "Globe",
+                "title": "Cobertura Global",
+                "description": "Tu historial viaja contigo: traducible y accesible en cualquier parte del mundo."
+            }
+        ]
+    },
+    "howItWorks": {
+        "title": "Bienestar, sin complicaciones.",
+        "subtitle": "Hemos simplificado la gestión de tu salud. Cuatro pasos para cuidarte mejor.",
+        "steps": [
+            {
+                "icon": "Smartphone",
+                "title": "Instalación",
+                "description": "Descárgala desde App Store o Google Play en segundos.",
+                "color": "bg-blue-100 text-blue-600"
+            },
+            {
+                "icon": "UserCheck",
+                "title": "Verificación",
+                "description": "Crea tu perfil de salud seguro en pocos pasos.",
+                "color": "bg-teal-100 text-teal-600"
+            },
+            {
+                "icon": "FilePlus",
+                "title": "Digitalización",
+                "description": "Sube tus documentos médicos de forma rápida y sencilla.",
+                "color": "bg-orange-100 text-orange-600"
+            },
+            {
+                "icon": "BellRing",
+                "title": "Gestión",
+                "description": "Programa tus citas y recibe recordatorios cuando se acerque la fecha.",
+                "color": "bg-indigo-100 text-indigo-600"
+            }
+        ]
+    },
+    "features": {
+        "label": "Funcionalidades Premium",
+        "title": "Todo lo que necesitas para tu bienestar",
+        "subtitle": "Diseñado para simplificar tu vida y darte la tranquilidad que mereces al gestionar tu salud.",
+        "items": [
+            {
+                "icon": "Activity",
+                "title": "Recomendaciones Personalizadas",
+                "description": "Recibe un plan de pruebas a medida, basado en tu edad, antecedentes y estilo de vida."
+            },
+            {
+                "icon": "Shield",
+                "title": "Avalado por Expertos",
+                "description": "Algoritmos diseñados con rigor médico para garantizar la precisión de cada recomendación."
+            },
+            {
+                "icon": "Smartphone",
+                "title": "Prevención Activa",
+                "description": "No esperes a enfermar. Anticípate con chequeos periódicos sugeridos automáticamente."
+            },
+            {
+                "icon": "Calendar",
+                "title": "Historial Estructurado",
+                "description": "Tu línea de vida médica organizada cronológicamente. Llévala contigo a cualquier especialista."
+            }
+        ]
+    },
+    "medicalHistory": {
+        "title": "Inteligencia Artificial",
+        "titleHighlight": "historial",
+        "titleMiddle": "al servicio de tu",
+        "description": "Olvídate de las carpetas físicas y los diagnósticos perdidos. Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.",
+        "checkpoints": [
+            "Historial cronológico unificado",
+            "Recordatorios de exámenes periódicos",
+            "Subida y almacenamiento de resultados",
+            "Orientación profesional (disponible en plan Premium)"
+        ],
+        "floatingBadge": {
+            "title": "Análisis Completado",
+            "subtitle": "Hace 2 minutos"
+        }
+    },
+    "pricing": {
+        "label": "Planes Flexibles",
+        "title": "Invierte en tu tranquilidad",
+        "subtitle": "Elige el plan que mejor se adapte a tus necesidades de prevención y salud.",
+        "freePlan": {
+            "name": "Gratuito",
+            "description": "Para empezar a cuidarte",
+            "price": "0 €",
+            "pricePeriod": "/ para siempre",
+            "features": [
+                {
+                    "text": "Historial médico básico",
+                    "included": true
+                },
+                {
+                    "text": "Recomendaciones estándar",
+                    "included": true
+                },
+                {
+                    "text": "Subida de pruebas (límite básico)",
+                    "included": true
+                },
+                {
+                    "text": "Incluye publicidad",
+                    "included": false
+                }
+            ],
+            "cta": "Descargar App"
+        },
+        "premiumPlan": {
+            "name": "Premium",
+            "description": "Salud completa sin límites",
+            "price": "45 €",
+            "pricePeriod": "/ año",
+            "badge": "RECOMENDADO",
+            "features": [
+                "Todo lo incluido en el plan Gratuito",
+                "<strong>Sin publicidad</strong>",
+                "Sincronización con Calendario (Google / Outlook / Apple)",
+                "<strong>Segunda opinión médica</strong> (hasta 5 al año)",
+                "Historial médico ilimitado"
+            ],
+            "cta": "Empezar Prueba Gratuita"
+        },
+        "footnote": "* Servicio Concierge (recopilación de historial completo) disponible bajo demanda por 200 €."
+    },
+    "team": {
+        "label": "Mentes Brillantes",
+        "title": "Construido por expertos.",
+        "members": [
+            {
+                "name": "Dr. Alex Hugué",
+                "role": "Founder & Chief Medical Officer",
+                "location": "Barcelona",
+                "image": "/assets/team/alex-hugue.png",
+                "bio": "Médico especialista con visión innovadora en medicina preventiva."
+            },
+            {
+                "name": "Edgar Boch",
+                "role": "Private Equity | Operating Partner | PHI Industrial Acquisitions",
+                "location": "Barcelona, Catalonia",
+                "image": "/assets/team/edgar-bosch.jpg",
+                "bio": "Operative Partner en PHI Industrial Acquisitions."
+            }
+        ]
+    },
+    "footer": {
+        "description": "Tu salud, nuestra prioridad. Tecnología moderna, cercana y alineada con tu bienestar.",
+        "productLinks": [
+            {
+                "name": "Características",
+                "href": "#caracteristicas"
+            },
+            {
+                "name": "Cómo funciona",
+                "href": "#como-funciona"
+            },
+            {
+                "name": "Seguridad",
+                "href": "#"
+            },
+            {
+                "name": "Precios",
+                "href": "#"
+            }
+        ],
+        "companyLinks": [
+            {
+                "name": "Sobre nosotros",
+                "href": "#equipo"
+            },
+            {
+                "name": "Blog",
+                "href": "#"
+            },
+            {
+                "name": "Carreras",
+                "href": "#"
+            },
+            {
+                "name": "Contacto",
+                "href": "#"
+            }
+        ],
+        "legalLinks": [
+            {
+                "name": "Términos de Uso",
+                "href": "/terminos-de-uso"
+            },
+            {
+                "name": "Política de Privacidad",
+                "href": "/politica-de-privacidad"
+            },
+            {
+                "name": "Cookies",
+                "href": "#"
+            },
+            {
+                "name": "RGPD",
+                "href": "#"
+            }
+        ],
+        "socialLinks": [
+            {
+                "name": "X",
+                "href": "#"
+            },
+            {
+                "name": "Instagram",
+                "href": "#"
+            },
+            {
+                "name": "LinkedIn",
+                "href": "#"
+            }
+        ],
+        "copyright": "SaludCheck365.",
+        "rightsText": "Todos los derechos reservados.",
+        "madeIn": "Hecho con ❤️ en Barcelona",
+        "statusText": "Todos los sistemas operativos",
+        "productTitle": "Producto",
+        "companyTitle": "Compañía",
+        "legalTitle": "Legal"
+    }
+}

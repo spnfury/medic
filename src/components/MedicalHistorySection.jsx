@@ -3,7 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const MedicalHistorySection = () => {
+const MedicalHistorySection = ({ content }) => {
+  const title = content?.title || 'Inteligencia Artificial';
+  const titleMiddle = content?.titleMiddle || 'al servicio de tu';
+  const titleHighlight = content?.titleHighlight || 'historial';
+  const description = content?.description || '';
+  const checkpoints = content?.checkpoints || [];
+  const floatingBadge = content?.floatingBadge || { title: 'Análisis Completado', subtitle: 'Hace 2 minutos' };
+
   const images = [
     "/assets/app_screens/body_recommendations.png",
     "/assets/app_screens/medical_history.png",
@@ -62,7 +69,7 @@ const MedicalHistorySection = () => {
 
               </div>
 
-              {/* Navigation Arrows - Moved outside the mockup for better visibility */}
+              {/* Navigation Arrows */}
               <button
                 onClick={(e) => { e.stopPropagation(); prevSlide(); }}
                 className="absolute -left-6 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-brand-blue p-3 rounded-full shadow-xl transition-all duration-300 z-30 hover:scale-110 active:scale-95"
@@ -89,8 +96,8 @@ const MedicalHistorySection = () => {
                     <CheckCircle2 size={20} />
                   </div>
                   <div>
-                    <p className="font-bold text-brand-blue">Análisis Completado</p>
-                    <p className="text-xs text-gray-400">Hace 2 minutos</p>
+                    <p className="font-bold text-brand-blue">{floatingBadge.title}</p>
+                    <p className="text-xs text-gray-400">{floatingBadge.subtitle}</p>
                   </div>
                 </div>
                 <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
@@ -108,21 +115,15 @@ const MedicalHistorySection = () => {
             className="order-1 lg:order-2"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-brand-blue mb-8 leading-[1.1] text-balance">
-              Inteligencia Artificial <br />
-              al servicio de tu <span className="text-[#1CAEC1]">historial</span>
+              {title} <br />
+              {titleMiddle} <span className="text-[#1CAEC1]">{titleHighlight}</span>
             </h2>
             <p className="text-xl text-gray-500 font-light mb-10 leading-relaxed">
-              Olvídate de las carpetas físicas y los diagnósticos perdidos.
-              Nuestra plataforma organiza, categoriza y analiza tu información médica automáticamente.
+              {description}
             </p>
 
             <div className="space-y-6 mb-10">
-              {[
-                "Historial cronológico unificado",
-                "Recordatorios de exámenes periódicos",
-                "Subida y almacenamiento de resultados",
-                "Orientación profesional (disponible en plan Premium)"
-              ].map((item, i) => (
+              {checkpoints.map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-6 h-6 rounded-full bg-[#1CAEC1]/20 flex items-center justify-center text-[#1CAEC1] flex-shrink-0">
                     <CheckCircle2 size={14} />
@@ -131,8 +132,6 @@ const MedicalHistorySection = () => {
                 </div>
               ))}
             </div>
-
-
           </motion.div>
         </div>
       </div>

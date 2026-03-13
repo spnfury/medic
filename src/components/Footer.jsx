@@ -10,35 +10,33 @@ const XIcon = ({ className }) => (
   </svg>
 );
 
-const Footer = () => {
+const socialIconMap = {
+  'X': XIcon,
+  'Instagram': Instagram,
+  'LinkedIn': Linkedin,
+};
+
+const socialColorMap = {
+  'X': 'hover:text-gray-300',
+  'Instagram': 'hover:text-pink-500',
+  'LinkedIn': 'hover:text-blue-600',
+};
+
+const Footer = ({ content }) => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    product: [
-      { name: 'Características', href: '#caracteristicas' },
-      { name: 'Cómo funciona', href: '#como-funciona' },
-      { name: 'Seguridad', href: '#' },
-      { name: 'Precios', href: '#' },
-    ],
-    company: [
-      { name: 'Sobre nosotros', href: '#equipo' },
-      { name: 'Blog', href: '#' },
-      { name: 'Carreras', href: '#' },
-      { name: 'Contacto', href: '#' },
-    ],
-    legal: [
-      { name: 'Términos de Uso', href: '/terminos-de-uso' },
-      { name: 'Política de Privacidad', href: '/politica-de-privacidad' },
-      { name: 'Cookies', href: '#' },
-      { name: 'RGPD', href: '#' },
-    ],
-  };
-
-  const socialLinks = [
-    { name: 'X', icon: XIcon, href: '#', color: 'hover:text-gray-300' },
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-500' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-  ];
+  const description = content?.description || '';
+  const productLinks = content?.productLinks || [];
+  const companyLinks = content?.companyLinks || [];
+  const legalLinks = content?.legalLinks || [];
+  const socialLinks = content?.socialLinks || [];
+  const copyright = content?.copyright || 'SaludCheck365.';
+  const rightsText = content?.rightsText || 'Todos los derechos reservados.';
+  const madeIn = content?.madeIn || 'Hecho con ❤️ en Barcelona';
+  const statusText = content?.statusText || 'Todos los sistemas operativos';
+  const productTitle = content?.productTitle || 'Producto';
+  const companyTitle = content?.companyTitle || 'Compañía';
+  const legalTitle = content?.legalTitle || 'Legal';
 
   return (
     <footer className="bg-gradient-to-br from-[#0E2B43] via-[#0A1F30] to-[#050505] text-white relative overflow-hidden">
@@ -64,18 +62,19 @@ const Footer = () => {
                 className="h-10 w-auto mb-6 opacity-90"
               />
               <p className="text-gray-400 text-lg leading-relaxed max-w-md mb-8">
-                Tu salud, nuestra prioridad. Tecnología moderna, cercana y alineada con tu bienestar.
+                {description}
               </p>
 
               {/* Social Links */}
               <div className="flex gap-4">
                 {socialLinks.map((social) => {
-                  const Icon = social.icon;
+                  const Icon = socialIconMap[social.name] || XIcon;
+                  const color = socialColorMap[social.name] || 'hover:text-gray-300';
                   return (
                     <motion.a
                       key={social.name}
                       href={social.href}
-                      className={`w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-blue/20 hover:border-brand-blue/30 flex items-center justify-center transition-all ${social.color}`}
+                      className={`w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-blue/20 hover:border-brand-blue/30 flex items-center justify-center transition-all ${color}`}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       aria-label={social.name}
@@ -96,9 +95,9 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">Producto</h4>
+                <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">{productTitle}</h4>
                 <ul className="space-y-4">
-                  {footerLinks.product.map((link) => (
+                  {productLinks.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
@@ -118,9 +117,9 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">Compañía</h4>
+                <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">{companyTitle}</h4>
                 <ul className="space-y-4">
-                  {footerLinks.company.map((link) => (
+                  {companyLinks.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
@@ -140,9 +139,9 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">Legal</h4>
+                <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">{legalTitle}</h4>
                 <ul className="space-y-4">
-                  {footerLinks.legal.map((link) => (
+                  {legalLinks.map((link) => (
                     <li key={link.name}>
                       {link.href.startsWith('/') ? (
                         <Link
@@ -176,10 +175,10 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center gap-2 text-gray-500 text-sm"
             >
-              <span>© {currentYear} SaludCheck365.</span>
-              <span className="hidden sm:inline">Todos los derechos reservados.</span>
+              <span>© {currentYear} {copyright}</span>
+              <span className="hidden sm:inline">{rightsText}</span>
               <span className="hidden md:inline flex items-center gap-1">
-                Hecho con <Heart className="w-3 h-3 text-red-500 fill-current" /> en Barcelona
+                {madeIn}
               </span>
             </motion.div>
 
@@ -194,7 +193,7 @@ const Footer = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span>Todos los sistemas operativos</span>
+                <span>{statusText}</span>
               </div>
             </motion.div>
           </div>

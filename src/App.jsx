@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import HomePage from '@/pages/HomePage';
 import TermsOfUse from '@/pages/TermsOfUse';
 import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import AdminPage from '@/pages/AdminPage';
 import { Toaster } from '@/components/ui/toaster';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/terminos-de-uso" element={<TermsOfUse />} />
         <Route path="/politica-de-privacidad" element={<PrivacyPolicy />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Toaster />
     </Router>
