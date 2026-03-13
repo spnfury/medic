@@ -2,7 +2,7 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!googlec6696875e2cf4e6f\\.html).*)",
       "destination": "/index.html"
     }
   ]

@@ -13,7 +13,7 @@ const TeamSection = ({ content }) => {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[#00CED1] font-bold tracking-widest uppercase text-sm mb-4 block"
+            className="text-[#1CAEC1] font-bold tracking-widest uppercase text-sm mb-4 block"
           >
             {label}
           </motion.span>
@@ -44,11 +44,8 @@ const TeamSection = ({ content }) => {
                   src={member.image} />
               </div>
 
-              <h3 className="text-2xl font-bold text-brand-blue mb-1">{member.name}</h3>
-              <p className="text-[#00CED1] font-medium mb-1 text-sm tracking-wide">{member.role}</p>
-              {member.location && (
-                <p className="text-gray-400 text-sm mb-3">{member.location}</p>
-              )}
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
+              <p className="text-[#1CAEC1] font-medium mb-3 text-sm tracking-wide uppercase">{member.role}</p>
               <p className="text-gray-500 font-light mb-4 text-lg">{member.bio}</p>
             </motion.div>
           ))}

@@ -69,6 +69,23 @@ const FeaturesSection = ({ content }) => {
                         );
                     })}
                 </div>
+
+                <div className="flex justify-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <Button
+                            className="h-16 px-10 rounded-full bg-white border-2 border-gray-100 text-[#0E2B43] hover:border-[#0E2B43] hover:bg-white text-xl font-bold transition-all shadow-lg hover:shadow-2xl flex items-center gap-3"
+                        >
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1CAEC1] to-[#0E2B43]">
+                                Explorar características
+                            </span>
+                            <ArrowRight className="text-[#0E2B43]" />
+                        </Button>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

@@ -39,7 +39,7 @@ const Footer = ({ content }) => {
   const legalTitle = content?.legalTitle || 'Legal';
 
   return (
-    <footer className="bg-gradient-to-br from-[#0E2B43] via-[#0A1F30] to-[#050505] text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-[#0E2B43] via-[#081b2a] to-[#050505] text-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#1CAEC1]/10 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F07C49]/10 rounded-full blur-3xl opacity-30" />

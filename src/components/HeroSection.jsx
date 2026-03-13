@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Check, Shield } from 'lucide-react';
+import { ArrowRight, Check, Shield, Apple } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -40,11 +40,11 @@ const HeroSection = ({ content }) => {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
-  const handleDownload = (platform) => {
-    toast({
-      title: downloadToast.title,
-      description: downloadToast.description.replace('{platform}', platform),
-    });
+  const handleDownload = () => {
+    const element = document.querySelector('#descargar');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const activeSlide = slides.length > 0 ? slides[currentSlide] : null;
@@ -80,23 +80,21 @@ const HeroSection = ({ content }) => {
               {description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-center justify-center lg:justify-start">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleDownload('iOS')}
-                className="h-12 md:h-14 transition-all"
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <Button
+                onClick={handleDownload}
+                className="h-14 px-8 rounded-full bg-white hover:bg-gray-50 text-gray-900 text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg border-2 border-gray-200 hover:border-gray-300 flex items-center gap-3"
               >
-                <img src="/assets/app-store-logo.png" alt="Download on App Store" className="h-full w-auto object-contain" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleDownload('Android')}
-                className="h-12 md:h-14 transition-all"
+                <Apple className="w-6 h-6" fill="currentColor" />
+                <span>App Store</span>
+              </Button>
+              <Button
+                onClick={handleDownload}
+                variant="outline"
+                className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-300 text-gray-900 text-lg font-medium bg-white hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-3"
               >
                 <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto object-contain" />
-              </motion.button>
+              </Button>
             </div>
 
             <div className="mt-8 md:mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium justify-center lg:justify-start">
@@ -118,7 +116,7 @@ const HeroSection = ({ content }) => {
             </div>
           </motion.div>
 
-          {/* Right Column - Visual (hidden on mobile for better layout) */}
+          {/* Right Column - Visual */}
           {activeSlide && (
             <div className="hidden lg:flex md:w-1/2 relative h-[600px] items-center justify-center pointer-events-none">
               {/* Background Blob */}
