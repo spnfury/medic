@@ -198,7 +198,7 @@ const Header = ({ content }) => {
                   transition={{ delay: 0.4 }}
                   className="mt-auto"
                 >
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3 items-center">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -206,9 +206,9 @@ const Header = ({ content }) => {
                         handleDownload('iOS');
                         setIsMobileMenuOpen(false);
                       }}
-                      className="h-12 w-full"
+                      className="w-full flex justify-center"
                     >
-                      <img src="/assets/app-store-badge.svg" alt="Descarga en el App Store" className="h-full w-auto mx-auto object-contain" />
+                      <img src="/assets/app-store-badge.svg" alt="Descarga en el App Store" className="h-[46px] w-auto object-contain" />
                     </motion.button>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -217,9 +217,9 @@ const Header = ({ content }) => {
                         handleDownload('Android');
                         setIsMobileMenuOpen(false);
                       }}
-                      className="h-12 w-full"
+                      className="w-full flex justify-center"
                     >
-                      <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-full w-auto mx-auto object-contain" />
+                      <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[66px] w-auto object-contain -mt-2" />
                     </motion.button>
                   </div>
                 </motion.div>
