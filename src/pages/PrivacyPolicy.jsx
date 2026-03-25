@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
             <div className="mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00CED1]/10 to-[#4A90E2]/10 border border-[#00CED1]/20 mb-6">
                 <Shield className="w-4 h-4 text-[#00CED1]" />
-                <span className="text-sm font-semibold text-gray-700">Actualizado: Diciembre 2025</span>
+                <span className="text-sm font-semibold text-gray-700">Actualizado: Marzo 2026</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6 leading-tight">
                 Política de <span className="gradient-text">Privacidad</span>
@@ -117,6 +117,7 @@ const PrivacyPolicy = () => {
 
               <section id="introduccion" className="scroll-mt-24">
                 <h2>1. Introducción</h2>
+                <p><strong>Perteneciente a la empresa EBC ENTERPRISE S.L.</strong></p>
                 <p>
                   En Saludcheck365 valoramos tu confianza y nos tomamos muy en serio la protección de tu información personal. Esta Política de Privacidad explica de forma clara qué datos recopilamos, con qué finalidad los utilizamos, cómo los protegemos, con quién los compartimos y cuáles son tus derechos en relación con su tratamiento.
                 </p>
@@ -128,7 +129,7 @@ const PrivacyPolicy = () => {
               <section id="responsable" className="scroll-mt-24">
                 <h2>2. Responsable del Tratamiento</h2>
                 <p>
-                  El responsable del tratamiento de tus datos personales es <strong>Saludcheck365</strong>, con domicilio en Barcelona, España.
+                  El responsable del tratamiento de tus datos personales es <strong>Saludcheck365/EBC ENTERPRISE S.L.</strong>, con domicilio en Barcelona, España.
                 </p>
                 <p>
                   Puedes contactar con nuestro Delegado de Protección de Datos (DPO) a través de: <a href="mailto:saludcheck365@gmail.com">saludcheck365@gmail.com</a> o enviando una carta a la dirección anterior con el asunto "Atención: Delegado de Protección de Datos".
@@ -175,7 +176,7 @@ const PrivacyPolicy = () => {
               <section id="compartir" className="scroll-mt-24">
                 <h2>5. Con Quién Compartimos Tus Datos</h2>
                 <p>
-                  Saludcheck365 comparte información únicamente en los siguientes casos y bajo estrictas medidas de confidencialidad:
+                  Saludcheck365/EBC ENTERPRISE S.L. comparte información únicamente en los siguientes casos y bajo estrictas medidas de confidencialidad:
                 </p>
                 <ul>
                   <li>Con <strong>proveedores tecnológicos</strong> (hosting, mantenimiento, analítica, almacenamiento seguro en la nube).</li>
@@ -198,7 +199,7 @@ const PrivacyPolicy = () => {
               <section id="seguridad" className="scroll-mt-24">
                 <h2>7. Seguridad de la Información</h2>
                 <p>
-                  Implementamos medidas técnicas y organizativas avanzadas para proteger tu información contra accesos no autorizados, pérdida o alteración. Entre ellas se incluyen sistemas de cifrado, protocolos SSL, verificación en dos pasos y servidores seguros en la UE.
+                  Como EBC ENTERPRISE S.L. Implementamos medidas técnicas y organizativas avanzadas para proteger tu información contra accesos no autorizados, pérdida o alteración. Entre ellas se incluyen sistemas de cifrado, protocolos SSL, verificación en dos pasos y servidores seguros en la UE.
                 </p>
                 <p>
                   Realizamos auditorías de seguridad periódicas y, en caso de detectarse una brecha que pudiera afectar a tus datos personales, te notificaríamos en un plazo máximo de <strong>72 horas</strong>, cumpliendo con el RGPD.
@@ -279,7 +280,7 @@ const PrivacyPolicy = () => {
 
               <div className="mt-16 pt-8 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center">
-                  Última actualización: Enero 2026
+                  Última actualización: Marzo 2026
                 </p>
               </div>
             </div>

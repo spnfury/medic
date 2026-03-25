@@ -99,7 +99,7 @@ const TermsOfUse = () => {
             <div className="mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-200 mb-6">
                 <Clock className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-semibold text-gray-700">Actualizado: Enero 2026</span>
+                <span className="text-sm font-semibold text-gray-700">Actualizado: Marzo 2026</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6 leading-tight">
                 Términos de <span className="gradient-text">Uso</span>
@@ -115,7 +115,7 @@ const TermsOfUse = () => {
               <section id="disposiciones" className="scroll-mt-24">
                 <h2>1. Disposiciones Generales y Aceptación de los Términos</h2>
                 <p>
-                  El acceso y uso de la aplicación móvil Saludcheck365, de su página web asociada y de todos los servicios digitales vinculados (en adelante, los "Servicios"), se rigen por los presentes Términos de Uso (en adelante, los "Términos"). Estos Términos establecen un acuerdo legal y vinculante entre tú, como usuario de la aplicación (en adelante, el "usuario"), y la sociedad <strong>Saludcheck365</strong>, con domicilio social en Barcelona, España, inscrita en el Registro Mercantil correspondiente (en adelante, "Saludcheck365", "nosotros" o "la compañía").
+                  El acceso y uso de la aplicación móvil Saludcheck365, de su página web asociada y de todos los servicios digitales vinculados (en adelante, los "Servicios"), se rigen por los presentes Términos de Uso (en adelante, los "Términos"). Estos Términos establecen un acuerdo legal y vinculante entre tú, como usuario de la aplicación (en adelante, el "usuario"), y la sociedad <strong>Saludcheck365 bajo la empresa EBC ENTERPRISE S.L. </strong>, con domicilio social en Barcelona, España, inscrita en el Registro Mercantil correspondiente (en adelante, "Saludcheck365", "nosotros" o "la compañía").
                 </p>
                 <p>
                   Al descargar, registrarte, acceder o utilizar los Servicios de cualquier modo, aceptas de forma expresa, plena y sin reservas estos Términos y nuestra Política de Privacidad. Si no estás de acuerdo con alguna de sus disposiciones, deberás abstenerte de utilizar la aplicación.
@@ -252,7 +252,7 @@ const TermsOfUse = () => {
               <section id="cambios-terminos" className="scroll-mt-24">
                 <h2>9. Cambios en los Términos</h2>
                 <p>
-                  Saludcheck365 podrá modificar estos Términos en cualquier momento. Si se introducen cambios sustanciales, se notificará a los usuarios a través de la aplicación o por correo electrónico. El uso continuado de la app tras los avisos implicará aceptación de las modificaciones.
+                  Saludcheck365/EBC ENTERPRISE S.L. podrá modificar estos Términos en cualquier momento. Si se introducen cambios sustanciales, se notificará a los usuarios a través de la aplicación o por correo electrónico. El uso continuado de la app tras los avisos implicará aceptación de las modificaciones.
                 </p>
               </section>
 
@@ -262,7 +262,7 @@ const TermsOfUse = () => {
                   Estos Términos constituyen el acuerdo completo entre tú y Saludcheck365 respecto al uso de los Servicios. Si alguna disposición resulta inválida, las restantes seguirán aplicándose plenamente.
                 </p>
                 <p>
-                  La compañía podrá ceder o transferir sus derechos y obligaciones en el marco de procesos corporativos (fusión, adquisición o reestructuración).
+                  La compañía EBC ENTERPRISE S.L. podrá ceder o transferir sus derechos y obligaciones en el marco de procesos corporativos (fusión, adquisición o reestructuración).
                 </p>
                 <p>
                   Todas las comunicaciones oficiales se realizarán electrónicamente y tendrán la misma validez que si se hubieran entregado en formato físico.
@@ -284,7 +284,7 @@ const TermsOfUse = () => {
 
               <div className="mt-16 pt-8 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center">
-                  Última actualización: Enero 2026
+                  Última actualización: Marzo 2026
                 </p>
               </div>
             </div>
