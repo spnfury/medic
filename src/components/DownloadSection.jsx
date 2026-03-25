@@ -40,13 +40,13 @@ const DownloadSection = () => {
                                     onClick={() => handleDownloadLink('https://apps.apple.com')}
                                     className="hover:scale-105 active:scale-95 transition-transform focus:outline-none"
                                 >
-                                    <img src="/assets/app-store-badge.svg" alt="Descarga en el App Store" className="h-[46px] w-auto object-contain" />
+                                    <img src="/assets/app-store-badge.svg" alt="Descarga en el App Store" className="h-[40px] w-auto object-contain" />
                                 </button>
                                 <button
                                     onClick={() => handleDownloadLink('https://play.google.com')}
                                     className="hover:scale-105 active:scale-95 transition-transform focus:outline-none sm:-ml-2"
                                 >
-                                    <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[66px] w-auto object-contain" />
+                                    <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[58px] w-auto object-contain" />
                                 </button>
                             </div>
                         </motion.div>
