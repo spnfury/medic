@@ -81,20 +81,18 @@ const HeroSection = ({ content }) => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <Button
+              <button
                 onClick={handleDownload}
-                className="h-14 px-8 rounded-full bg-white hover:bg-gray-50 text-gray-900 text-lg font-medium transition-all hover:scale-105 active:scale-95 shadow-lg border-2 border-gray-200 hover:border-gray-300 flex items-center gap-3"
+                className="hover:scale-105 active:scale-95 transition-transform focus:outline-none"
               >
-                <Apple className="w-6 h-6" fill="currentColor" />
-                <span>App Store</span>
-              </Button>
-              <Button
+                <img src="/assets/app-store-badge.svg" alt="Descarga en el App Store" className="h-14 w-auto object-contain" />
+              </button>
+              <button
                 onClick={handleDownload}
-                variant="outline"
-                className="h-14 px-8 rounded-full border-2 border-gray-200 hover:border-gray-300 text-gray-900 text-lg font-medium bg-white hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-3"
+                className="hover:scale-105 active:scale-95 transition-transform focus:outline-none"
               >
-                <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto object-contain" />
-              </Button>
+                <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-14 w-auto object-contain" />
+              </button>
             </div>
 
             <div className="mt-8 md:mt-12 flex items-center gap-4 text-sm text-gray-400 font-medium justify-center lg:justify-start">

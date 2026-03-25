@@ -208,7 +208,7 @@ const Header = ({ content }) => {
                       }}
                       className="h-12 w-full"
                     >
-                      <img src="/assets/app-store-logo.png" alt="Download on App Store" className="h-full w-auto mx-auto object-contain" />
+                      <img src="/assets/app-store-badge.svg" alt="Descarga en el App Store" className="h-full w-auto mx-auto object-contain" />
                     </motion.button>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -219,7 +219,7 @@ const Header = ({ content }) => {
                       }}
                       className="h-12 w-full"
                     >
-                      <img src="/assets/google-play-logo.png" alt="Get it on Google Play" className="h-full w-auto mx-auto object-contain" />
+                      <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-full w-auto mx-auto object-contain" />
                     </motion.button>
                   </div>
                 </motion.div>
