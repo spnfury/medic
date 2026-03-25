@@ -219,7 +219,7 @@ const Header = ({ content }) => {
                       }}
                       className="w-full flex justify-center"
                     >
-                      <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[58px] w-auto object-contain -mt-1" />
+                      <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[40px] w-auto object-contain" />
                     </motion.button>
                   </div>
                 </motion.div>

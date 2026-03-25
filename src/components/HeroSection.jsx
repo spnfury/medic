@@ -89,9 +89,9 @@ const HeroSection = ({ content }) => {
               </button>
               <button
                 onClick={handleDownload}
-                className="hover:scale-105 active:scale-95 transition-transform focus:outline-none sm:-ml-2"
+                className="hover:scale-105 active:scale-95 transition-transform focus:outline-none"
               >
-                <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[58px] w-auto object-contain" />
+                <img src="/assets/google-play-badge.png" alt="Disponible en Google Play" className="h-[40px] w-auto object-contain" />
               </button>
             </div>
 
